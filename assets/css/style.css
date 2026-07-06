@@ -39,10 +39,20 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--ink);
+  /* no background here: it would paint over the z-index:-1 canvas */
+  background: transparent;
+}
+
+/* ambient glows: fixed layer BELOW the neural canvas (-2 < -1) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
   background:
     radial-gradient(1100px 700px at 75% -10%, #14234d 0%, rgba(10,20,40,0) 60%),
-    radial-gradient(900px 600px at -10% 110%, #0d2438 0%, rgba(10,20,40,0) 55%),
-    var(--paper);
+    radial-gradient(900px 600px at -10% 110%, #0d2438 0%, rgba(10,20,40,0) 55%);
 }
 
 .wrap {
