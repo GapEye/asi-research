@@ -379,3 +379,26 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* ---------- Neural background & header mark (appearance pass 2) ---------- */
+
+#neural-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* keep long-form text fully readable over the field */
+.entry-body, .abstract {
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 4px;
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mark { flex: none; color: var(--ink); }
