@@ -1,23 +1,25 @@
 /* ============================================================
-   ASI Research — asi-research.com
+   ASI Research — asi-research.com — CYBER THEME
    Type:   Familjen Grotesk (display) / Source Serif 4 (body) /
            IBM Plex Mono (metadata)
-   Color:  ink #16181D on paper #FFFFFF
-           technical accent: ultramarine #2742D6
-           governance accent: deep teal #0E7A5F
+   Color:  light ink #E8ECF5 on deep cyber blue #0A1428
+           technical accent: electric ultramarine #5B79FF
+           governance accent: neon teal #19C99A
    ============================================================ */
 
 :root {
-  --ink: #16181d;
-  --ink-soft: #4a4e58;
-  --paper: #ffffff;
-  --hairline: #e4e5e9;
-  --technical: #2742d6;
-  --technical-bg: #eef1fd;
-  --governance: #0e7a5f;
-  --governance-bg: #e9f5f0;
-  --essay: #6b4fd6;
-  --essay-bg: #f1edfc;
+  --ink: #e8ecf5;
+  --ink-soft: #96a0b8;
+  --paper: #0a1428;
+  --paper-raise: #101c38;
+  --hairline: #1e2a46;
+  --technical: #5b79ff;
+  --technical-bg: #16224a;
+  --governance: #19c99a;
+  --governance-bg: #0d2f27;
+  --essay: #9d7bff;
+  --essay-bg: #241b45;
+  --code-bg: #101a33;
   --max: 720px;
   --font-display: "Familjen Grotesk", system-ui, sans-serif;
   --font-body: "Source Serif 4", Georgia, serif;
@@ -26,7 +28,10 @@
 
 * { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  background: var(--paper);
+}
 
 body {
   margin: 0;
@@ -34,7 +39,10 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--ink);
-  background: var(--paper);
+  background:
+    radial-gradient(1100px 700px at 75% -10%, #14234d 0%, rgba(10,20,40,0) 60%),
+    radial-gradient(900px 600px at -10% 110%, #0d2438 0%, rgba(10,20,40,0) 55%),
+    var(--paper);
 }
 
 .wrap {
@@ -54,6 +62,8 @@ a:focus-visible {
   outline: 2px solid var(--technical);
   outline-offset: 2px;
 }
+
+::selection { background: rgba(91, 121, 255, 0.35); }
 
 /* ---------- Header ---------- */
 
@@ -77,9 +87,14 @@ a:focus-visible {
   font-size: 1.15rem;
   text-decoration: none;
   letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 
 .wordmark-dot { color: var(--technical); }
+
+.mark { flex: none; color: var(--ink); }
 
 .site-nav {
   display: flex;
@@ -99,7 +114,7 @@ a:focus-visible {
 .site-nav a:hover { color: var(--ink); }
 .site-nav a.active {
   color: var(--ink);
-  border-bottom-color: var(--ink);
+  border-bottom-color: var(--technical);
 }
 
 /* ---------- Hero ---------- */
@@ -151,7 +166,8 @@ a:focus-visible {
   border: 1px solid var(--hairline);
   border-radius: 6px;
   padding: 1rem 1.1rem;
-  transition: border-color 120ms ease;
+  background: rgba(16, 28, 56, 0.55);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
 }
 
 .track-card p {
@@ -161,8 +177,14 @@ a:focus-visible {
   line-height: 1.5;
 }
 
-.track-card-technical:hover { border-color: var(--technical); }
-.track-card-governance:hover { border-color: var(--governance); }
+.track-card-technical:hover {
+  border-color: var(--technical);
+  box-shadow: 0 0 18px rgba(91, 121, 255, 0.18);
+}
+.track-card-governance:hover {
+  border-color: var(--governance);
+  box-shadow: 0 0 18px rgba(25, 201, 154, 0.18);
+}
 
 /* ---------- Track + status chips ---------- */
 
@@ -239,7 +261,11 @@ a:focus-visible {
   line-height: 1.35;
 }
 
-.index-list a:hover .index-title { text-decoration: underline; text-underline-offset: 3px; }
+.index-list a:hover .index-title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--technical);
+}
 
 .index-sub {
   display: block;
@@ -288,9 +314,11 @@ a:focus-visible {
 }
 
 .abstract {
-  border-left: 3px solid var(--hairline);
-  padding: 0.25rem 0 0.25rem 1.1rem;
+  border-left: 3px solid var(--technical);
+  padding: 0.6rem 1rem 0.6rem 1.1rem;
   margin: 1.75rem 0;
+  background: rgba(16, 28, 56, 0.72);
+  border-radius: 0 4px 4px 0;
 }
 
 .abstract-label {
@@ -306,7 +334,12 @@ a:focus-visible {
 .entry-links a { color: var(--technical); text-decoration: none; }
 .entry-links a:hover { text-decoration: underline; }
 
-.entry-body { padding-top: 0.75rem; }
+.entry-body {
+  padding: 0.75rem 1rem 1rem;
+  margin: 0 -1rem;
+  background: rgba(10, 20, 40, 0.82);
+  border-radius: 6px;
+}
 
 .entry-body h2 {
   font-family: var(--font-display);
@@ -321,7 +354,11 @@ a:focus-visible {
   margin: 1.75rem 0 0.5rem;
 }
 
-.entry-body a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.entry-body a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--technical);
+}
 
 .entry-body blockquote {
   margin: 1.5rem 0;
@@ -333,13 +370,14 @@ a:focus-visible {
 .entry-body code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  background: #f4f4f6;
+  background: var(--code-bg);
   padding: 0.1em 0.35em;
   border-radius: 3px;
 }
 
 .entry-body pre {
-  background: #f4f4f6;
+  background: var(--code-bg);
+  border: 1px solid var(--hairline);
   padding: 1rem;
   border-radius: 6px;
   overflow-x: auto;
@@ -368,6 +406,15 @@ a:focus-visible {
 
 .footer-row a { color: inherit; }
 
+/* ---------- Neural background ---------- */
+
+#neural-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* ---------- Responsive & a11y ---------- */
 
 @media (max-width: 600px) {
@@ -379,26 +426,3 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
-
-/* ---------- Neural background & header mark (appearance pass 2) ---------- */
-
-#neural-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* keep long-form text fully readable over the field */
-.entry-body, .abstract {
-  background: rgba(255, 255, 255, 0.82);
-  border-radius: 4px;
-}
-
-.wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.mark { flex: none; color: var(--ink); }

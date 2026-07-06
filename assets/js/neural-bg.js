@@ -11,10 +11,10 @@
   var ctx = canvas.getContext('2d');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var TECH = '39,66,214';   // ultramarine
-  var GOV = '14,122,95';    // deep teal
-  var LINK_DIST = 110;      // node-to-node connection distance
-  var MOUSE_DIST = 170;     // cursor influence radius
+  var TECH = '91,121,255';  // electric ultramarine
+  var GOV = '25,201,154';   // neon teal
+  var LINK_DIST = 135;      // node-to-node connection distance
+  var MOUSE_DIST = 200;     // cursor influence radius
 
   var w = 0, h = 0, dpr = 1;
   var nodes = [];
@@ -36,7 +36,7 @@
   }
 
   function initNodes() {
-    var count = Math.max(24, Math.min(90, Math.floor((w * h) / 16000)));
+    var count = Math.max(24, Math.min(130, Math.floor((w * h) / 11500)));
     nodes = [];
     for (var i = 0; i < count; i++) {
       nodes.push({
@@ -82,9 +82,9 @@
         dx = a.x - b.x; dy = a.y - b.y;
         d = Math.sqrt(dx * dx + dy * dy);
         if (d < LINK_DIST) {
-          var alpha = (1 - d / LINK_DIST) * 0.08;
+          var alpha = (1 - d / LINK_DIST) * 0.17;
           // brighten links near the cursor
-          if (a.near < MOUSE_DIST || b.near < MOUSE_DIST) alpha *= 3.2;
+          if (a.near < MOUSE_DIST || b.near < MOUSE_DIST) alpha *= 3.0;
           ctx.strokeStyle = 'rgba(' + a.color + ',' + alpha.toFixed(3) + ')';
           ctx.lineWidth = 1;
           ctx.beginPath();
@@ -100,7 +100,7 @@
       for (i = 0; i < pts.length; i++) {
         a = pts[i];
         if (a.near < MOUSE_DIST) {
-          var ma = (1 - a.near / MOUSE_DIST) * 0.22;
+          var ma = (1 - a.near / MOUSE_DIST) * 0.4;
           ctx.strokeStyle = 'rgba(' + a.color + ',' + ma.toFixed(3) + ')';
           ctx.lineWidth = 1;
           ctx.beginPath();
@@ -115,7 +115,12 @@
     for (i = 0; i < pts.length; i++) {
       a = pts[i];
       var boost = a.near < MOUSE_DIST ? (1 - a.near / MOUSE_DIST) : 0;
-      ctx.fillStyle = 'rgba(' + a.color + ',' + (0.28 + boost * 0.45).toFixed(3) + ')';
+      // soft halo for glow
+      ctx.fillStyle = 'rgba(' + a.color + ',' + (0.07 + boost * 0.12).toFixed(3) + ')';
+      ctx.beginPath();
+      ctx.arc(a.x, a.y, (a.r + boost * 1.2) * 3.2, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = 'rgba(' + a.color + ',' + (0.5 + boost * 0.5).toFixed(3) + ')';
       ctx.beginPath();
       ctx.arc(a.x, a.y, a.r + boost * 1.2, 0, Math.PI * 2);
       ctx.fill();
