@@ -1,0 +1,44 @@
+title: ASI Research
+tagline: Technical advancement and governance of artificial superintelligence
+description: >-
+  Essays, papers, and methods on the development and governance of
+  artificial superintelligence.
+url: "https://asi-research.com"
+baseurl: ""
+
+# Author / org
+author:
+  name: ASI Research
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Collections
+collections:
+  papers:
+    output: true
+    permalink: /library/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "papers"
+    values:
+      layout: "paper"
+
+exclude:
+  - README.md
+  - LICENSE

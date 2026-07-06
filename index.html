@@ -1,0 +1,60 @@
+---
+layout: default
+title: ASI Research
+---
+<section class="hero">
+  <p class="hero-eyebrow mono">A research program in two tracks</p>
+  <h1 class="hero-title">Superintelligence is the greatest opportunity<br class="desktop-br"> in human history. <em>Let's build it well.</em></h1>
+  <p class="hero-lede">
+    Essays, papers, and methods on bringing artificial superintelligence
+    into the world — the technology that can end disease, unlock abundance,
+    and extend what humanity is capable of. Like every transformative
+    technology before it, it should be engineered well and governed
+    sensibly. That is how great things get built.
+  </p>
+  <div class="hero-tracks">
+    <a class="track-card track-card-technical" href="{{ '/library/' | relative_url }}#technical">
+      <span class="track track-technical">technical</span>
+      <p>Architectures, training methods, evaluation, and the open problems on the path to superintelligent systems.</p>
+    </a>
+    <a class="track-card track-card-governance" href="{{ '/library/' | relative_url }}#governance">
+      <span class="track track-governance">governance</span>
+      <p>Institutions, standards, and sensible practice that let development move fast and earn the world's confidence.</p>
+    </a>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="section-head">
+    <h2>Latest writing</h2>
+    <a class="mono more-link" href="{{ '/writing/' | relative_url }}">All essays →</a>
+  </div>
+  <ul class="index-list">
+    {% for post in site.posts limit: 5 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <span class="mono index-meta">{{ post.catalog_id }} · {{ post.date | date: "%d %b %Y" }}</span>
+        <span class="index-title">{{ post.title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="home-section">
+  <div class="section-head">
+    <h2>From the library</h2>
+    <a class="mono more-link" href="{{ '/library/' | relative_url }}">Full library →</a>
+  </div>
+  <ul class="index-list">
+    {% assign papers = site.papers | sort: "date" | reverse %}
+    {% for paper in papers limit: 5 %}
+    <li>
+      <a href="{{ paper.url | relative_url }}">
+        <span class="mono index-meta">{{ paper.catalog_id }} · <span class="track track-{{ paper.track }}">{{ paper.track }}</span></span>
+        <span class="index-title">{{ paper.title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

@@ -1,0 +1,41 @@
+---
+layout: default
+title: Library
+permalink: /library/
+---
+<header class="page-head">
+  <h1>Library</h1>
+  <p class="page-lede">Papers, methods, and reference material, catalogued in two tracks.</p>
+</header>
+
+{% assign papers = site.papers | sort: "date" | reverse %}
+
+<section class="library-section" id="technical">
+  <h2><span class="track track-technical">technical</span> Advancement</h2>
+  <ul class="index-list index-list-full">
+    {% for paper in papers %}{% if paper.track == "technical" %}
+    <li>
+      <a href="{{ paper.url | relative_url }}">
+        <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
+        <span class="index-title">{{ paper.title }}</span>
+        {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
+      </a>
+    </li>
+    {% endif %}{% endfor %}
+  </ul>
+</section>
+
+<section class="library-section" id="governance">
+  <h2><span class="track track-governance">governance</span> &amp; Practice</h2>
+  <ul class="index-list index-list-full">
+    {% for paper in papers %}{% if paper.track == "governance" %}
+    <li>
+      <a href="{{ paper.url | relative_url }}">
+        <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
+        <span class="index-title">{{ paper.title }}</span>
+        {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
+      </a>
+    </li>
+    {% endif %}{% endfor %}
+  </ul>
+</section>

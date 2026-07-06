@@ -1,0 +1,21 @@
+---
+layout: default
+title: Writing
+permalink: /writing/
+---
+<header class="page-head">
+  <h1>Writing</h1>
+  <p class="page-lede">Essays and working notes, in reverse chronological order.</p>
+</header>
+
+<ul class="index-list index-list-full">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <span class="mono index-meta">{{ post.catalog_id }} · {{ post.date | date: "%d %b %Y" }}</span>
+      <span class="index-title">{{ post.title }}</span>
+      {% if post.subtitle %}<span class="index-sub">{{ post.subtitle }}</span>{% endif %}
+    </a>
+  </li>
+  {% endfor %}
+</ul>

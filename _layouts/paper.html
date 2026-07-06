@@ -1,0 +1,33 @@
+---
+layout: default
+---
+<article class="entry">
+  <header class="entry-header">
+    <div class="meta-line mono">
+      {% if page.catalog_id %}<span class="catalog-id">{{ page.catalog_id }}</span>{% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
+      <span class="track track-{{ page.track }}">{{ page.track }}</span>
+      {% if page.status %}<span class="status">{{ page.status }}</span>{% endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.authors %}<p class="authors">{{ page.authors | join: ", " }}</p>{% endif %}
+  </header>
+
+  {% if page.abstract %}
+  <section class="abstract">
+    <span class="abstract-label mono">Abstract</span>
+    <p>{{ page.abstract }}</p>
+  </section>
+  {% endif %}
+
+  {% if page.pdf or page.external_url %}
+  <div class="entry-links mono">
+    {% if page.pdf %}<a href="{{ page.pdf | relative_url }}">PDF ↓</a>{% endif %}
+    {% if page.external_url %}<a href="{{ page.external_url }}">External link ↗</a>{% endif %}
+  </div>
+  {% endif %}
+
+  <div class="entry-body">
+    {{ content }}
+  </div>
+</article>
