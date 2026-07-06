@@ -155,6 +155,7 @@ a:focus-visible {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-wrap: balance;
 }
 
 .hero-lede {
