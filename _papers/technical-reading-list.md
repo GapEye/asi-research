@@ -1,21 +1,22 @@
 ---
-title: "ASI Technical Reading List: Compounding Intelligence"
+title: "ASI Technical Radar: Compounding Intelligence"
 catalog_id: ASI-LIB-001
 date: 2026-07-06
 track: technical
 status: living document
 abstract: >-
-  A curated map of the papers that matter most for building ASI: post-AGI
-  pathways, recursive self-improvement, automated AI research, architecture
-  discovery, and code-evaluable scientific search.
+  A curated map of the papers, model drops, benchmarks, and research systems
+  that matter most for building ASI: post-AGI pathways, recursive
+  self-improvement, automated AI research, architecture discovery, and
+  code-evaluable scientific search.
 external_url: https://arxiv.org/abs/2606.12683
 ---
 
-This reading list organizes the current ASI literature around one claim:
-superintelligence is less likely to arrive as a single artifact than as a
-stack of compounding loops. Models write code, code evaluates models, agents
-design stronger agents, and scientific workflows become cheaper, faster, and
-more parallel.
+This radar organizes the current ASI literature and frontier-lab releases
+around one claim: superintelligence is less likely to arrive as a single
+artifact than as a stack of compounding loops. Models write code, code
+evaluates models, agents design stronger agents, and scientific workflows
+become cheaper, faster, and more parallel.
 
 ## North star
 
@@ -27,7 +28,8 @@ recursive improvement, and large-scale multi-agent collectives.
 ## Core technical clusters
 
 - **Recursive self-improvement:** Darwin Godel Machine, Hyperagents, Huxley-Godel Machine, and MetaAI recursive self-design.
-- **Automated AI R&D:** AI Scientist, Live-SWE-agent, CodeEvolve, AlphaEvolve, and agentic architecture discovery.
+- **Automated AI R&D:** AI Scientist, Live-SWE-agent, CodeEvolve, AlphaEvolve, AIRA, AutoResearchClaw, Co-Scientist, Claude Science, and Gemini for Science.
+- **Frontier model drops:** GPT-5.6 Sol, Claude Fable 5, Claude Sonnet 5, Gemini 3.5 Flash, Antigravity Agent, Gemini Omni Flash, and Llama 4.
 - **Evaluation-grounded discovery:** systems that accept only changes validated by tests, benchmarks, proof checks, simulations, or domain evaluators.
 - **Collective intelligence:** ensembles of specialized agents that produce stronger search, review, repair, and synthesis than a single prompt loop.
 
@@ -51,6 +53,7 @@ making the resulting systems inspectable enough for deployment.
 
 ## Current priority
 
-Treat every paper in this library as a component in an ASI research stack:
+Treat every entry in this library as a component in an ASI research stack:
 scaling tells us what raw capability can buy, automated R&D shows how progress
-can compound, and governance measurement keeps that acceleration legible.
+can compound, model drops reveal what labs are productizing, and governance
+measurement keeps that acceleration legible.

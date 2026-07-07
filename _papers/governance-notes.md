@@ -27,6 +27,7 @@ into paralysis.
 - Secure sandboxes for self-improving systems that execute generated code.
 - Third-party measurement of AI R&D automation, including researcher time allocation, AI-authored code share, and oversight capacity.
 - Standards for model-generated scientific claims: executable artifacts, review logs, benchmark traces, and reproduction packages.
+- Agent-control layers: sandboxing, permissioning, monitoring, intervention, and incident response for models that can use tools over long horizons.
 
 ## Current anchor
 
@@ -35,3 +36,13 @@ useful current governance paper in this library because it treats acceleration
 as something to measure. If AI begins performing a large share of AI research,
 institutions need live telemetry on both capability progress and oversight
 capacity.
+
+## New anchors
+
+[LifeSciBench]({{ '/library/openai-lifescibench/' | relative_url }}) and
+[GeneBench-Pro]({{ '/library/openai-genebench-pro/' | relative_url }}) point
+toward domain-grounded scientific evaluations. The
+[Google DeepMind AI Control Roadmap]({{ '/library/google-ai-control-roadmap/' | relative_url }})
+and [OpenAI third-party evaluation playbook]({{ '/library/openai-third-party-evals-playbook/' | relative_url }})
+point toward the deployment side: harness design, supervision, controls, and
+evidence trails for agentic systems.
