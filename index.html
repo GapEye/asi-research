@@ -41,42 +41,44 @@ title: ASI Research
   </a>
 </section>
 
-<section class="home-section">
-  <div class="section-head">
-    <h2>Latest writing</h2>
-    <a class="mono more-link" href="{{ '/writing/' | relative_url }}">All essays →</a>
-  </div>
-  <ul class="index-list">
-    {% for post in site.posts limit: 5 %}
-    <li>
-      <a href="{{ post.url | relative_url }}">
-        <span class="mono index-meta">{{ post.catalog_id }} · {{ post.date | date: "%d %b %Y" }}</span>
-        <span class="index-title">{{ post.title }}</span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+<div class="home-columns">
+  <section class="home-section">
+    <div class="section-head">
+      <h2>Latest writing</h2>
+      <a class="mono more-link" href="{{ '/writing/' | relative_url }}">All essays →</a>
+    </div>
+    <ul class="index-list">
+      {% for post in site.posts limit: 5 %}
+      <li>
+        <a href="{{ post.url | relative_url }}">
+          <span class="mono index-meta">{{ post.catalog_id }} · {{ post.date | date: "%d %b %Y" }}</span>
+          <span class="index-title">{{ post.title }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
 
-<section class="home-section">
-  <div class="section-head">
-    <h2>From the radar</h2>
-    <a class="mono more-link" href="{{ '/library/' | relative_url }}">Full library →</a>
-  </div>
-  <ul class="index-list">
-    {% assign papers = site.papers | sort: "date" | reverse %}
-    {% for paper in papers limit: 5 %}
-    <li>
-      <a class="{% if paper.hero_image %}index-card has-thumb{% endif %}" href="{{ paper.url | relative_url }}">
-        {% if paper.hero_image %}
-        <span class="index-thumb"><img src="{{ paper.hero_image | relative_url }}" alt="" loading="lazy"></span>
-        {% endif %}
-        <span class="index-copy">
-          <span class="mono index-meta">{{ paper.catalog_id }} · <span class="track track-{{ paper.track }}">{{ paper.track }}</span></span>
-          <span class="index-title">{{ paper.title }}</span>
-        </span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+  <section class="home-section">
+    <div class="section-head">
+      <h2>From the radar</h2>
+      <a class="mono more-link" href="{{ '/library/' | relative_url }}">Full library →</a>
+    </div>
+    <ul class="index-list">
+      {% assign papers = site.papers | sort: "date" | reverse %}
+      {% for paper in papers limit: 5 %}
+      <li>
+        <a class="{% if paper.hero_image %}index-card has-thumb{% endif %}" href="{{ paper.url | relative_url }}">
+          {% if paper.hero_image %}
+          <span class="index-thumb"><img src="{{ paper.hero_image | relative_url }}" alt="" loading="lazy"></span>
+          {% endif %}
+          <span class="index-copy">
+            <span class="mono index-meta">{{ paper.catalog_id }} · <span class="track track-{{ paper.track }}">{{ paper.track }}</span></span>
+            <span class="index-title">{{ paper.title }}</span>
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

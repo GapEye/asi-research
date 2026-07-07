@@ -20,7 +20,9 @@
   --essay: #9d7bff;
   --essay-bg: #241b45;
   --code-bg: #101a33;
-  --max: 720px;
+  --max: 1320px;
+  --measure: 760px;
+  --article: 1120px;
   --font-display: "Familjen Grotesk", system-ui, sans-serif;
   --font-body: "Source Serif 4", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -58,7 +60,7 @@ body::before {
 .wrap {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 2rem;
 }
 
 .mono {
@@ -96,7 +98,7 @@ a:focus-visible {
   font-weight: 700;
   font-size: 1.15rem;
   text-decoration: none;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -130,23 +132,35 @@ a:focus-visible {
 /* ---------- Hero ---------- */
 
 .hero {
-  padding: 3.5rem 0 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  grid-template-areas:
+    "eyebrow tracks"
+    "title tracks"
+    "lede tracks"
+    "metrics tracks";
+  column-gap: clamp(2rem, 6vw, 5rem);
+  align-items: end;
+  padding: 5rem 0 3rem;
   border-bottom: 1px solid var(--hairline);
 }
 
 .hero-eyebrow {
+  grid-area: eyebrow;
   color: var(--ink-soft);
   text-transform: uppercase;
   margin: 0 0 1rem;
 }
 
 .hero-title {
+  grid-area: title;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.75rem, 4.5vw, 2.6rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: 4.35rem;
+  line-height: 0.98;
+  letter-spacing: 0;
   margin: 0 0 1.25rem;
+  max-width: 11ch;
 }
 
 .hero-title em {
@@ -159,15 +173,17 @@ a:focus-visible {
 }
 
 .hero-lede {
-  font-size: 1.15rem;
+  grid-area: lede;
+  font-size: 1.2rem;
   color: var(--ink-soft);
   max-width: 60ch;
   margin: 0 0 2rem;
 }
 
 .hero-tracks {
+  grid-area: tracks;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -228,6 +244,13 @@ a:focus-visible {
 
 .home-section { padding: 2.25rem 0 0.5rem; }
 
+.home-columns {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
+  gap: 2rem;
+  align-items: start;
+}
+
 .section-head {
   display: flex;
   align-items: baseline;
@@ -239,7 +262,7 @@ a:focus-visible {
 .library-section h2,
 .page-head h1 {
   font-family: var(--font-display);
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
 }
 
 .section-head h2 { font-size: 1.3rem; margin: 0 0 0.5rem; }
@@ -264,14 +287,14 @@ a:focus-visible {
 
 .index-card.has-thumb {
   display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
+  grid-template-columns: 152px minmax(0, 1fr);
   gap: 0.9rem;
   align-items: center;
 }
 
 .index-thumb {
   display: block;
-  width: 132px;
+  width: 152px;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border: 1px solid var(--hairline);
@@ -317,25 +340,57 @@ a:focus-visible {
 /* ---------- Pages & entries ---------- */
 
 .page-head { padding: 2.5rem 0 1rem; }
-.page-head h1 { font-size: 2rem; margin: 0 0 0.4rem; }
-.page-lede { color: var(--ink-soft); margin: 0; }
+.page-head h1 { font-size: 3.2rem; margin: 0 0 0.4rem; }
+.page-lede {
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 72ch;
+}
 
 .library-section { padding: 1.5rem 0 0.5rem; }
 .library-section h2 {
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
   margin: 1rem 0 0.25rem;
 }
 
-.entry { padding: 2.5rem 0; }
+.index-list-full {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.25rem;
+  padding-top: 0.75rem;
+}
+
+.index-list-full li {
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: rgba(16, 28, 56, 0.42);
+}
+
+.index-list-full li:last-child { border-bottom: 1px solid var(--hairline); }
+
+.index-list-full a {
+  height: 100%;
+  padding: 0.95rem;
+}
+
+.entry {
+  max-width: var(--article);
+  margin: 0 auto;
+  padding: 3.25rem 0;
+}
+
+.entry-header {
+  max-width: 920px;
+}
 
 .entry-header h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-size: 3.15rem;
+  line-height: 1.05;
+  letter-spacing: 0;
   margin: 0.6rem 0 0.4rem;
 }
 
@@ -354,13 +409,13 @@ a:focus-visible {
 }
 
 .entry-hero {
-  margin: 1.75rem 0;
+  margin: 2rem 0;
 }
 
 .entry-hero img {
   display: block;
   width: 100%;
-  max-height: 430px;
+  max-height: 520px;
   object-fit: contain;
   border: 1px solid var(--hairline);
   border-radius: 6px;
@@ -378,10 +433,23 @@ a:focus-visible {
   text-underline-offset: 3px;
 }
 
+.entry-layout {
+  display: grid;
+  grid-template-columns: minmax(0, var(--measure)) 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.entry-aside {
+  position: sticky;
+  top: 1.5rem;
+  min-width: 0;
+}
+
 .abstract {
   border-left: 3px solid var(--technical);
   padding: 0.6rem 1rem 0.6rem 1.1rem;
-  margin: 1.75rem 0;
+  margin: 0 0 1rem;
   background: rgba(16, 28, 56, 0.72);
   border-radius: 0 4px 4px 0;
 }
@@ -395,7 +463,15 @@ a:focus-visible {
 
 .abstract p { margin: 0; font-size: 1rem; color: var(--ink-soft); }
 
-.entry-links { display: flex; gap: 1.25rem; margin: 1rem 0; }
+.entry-links {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: rgba(16, 28, 56, 0.52);
+}
 .entry-links a { color: var(--technical); text-decoration: none; }
 .entry-links a:hover { text-decoration: underline; }
 
@@ -404,12 +480,13 @@ a:focus-visible {
   margin: 0 -1rem;
   background: rgba(10, 20, 40, 0.82);
   border-radius: 6px;
+  min-width: 0;
 }
 
 .entry-body h2 {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   margin: 2.25rem 0 0.75rem;
 }
 
@@ -483,14 +560,55 @@ a:focus-visible {
 /* ---------- Responsive & a11y ---------- */
 
 @media (max-width: 600px) {
+  .wrap { padding: 0 1.25rem; }
+  .hero {
+    display: block;
+    padding-top: 2.25rem;
+  }
+  .hero-title {
+    font-size: 2.35rem;
+    line-height: 1.05;
+    max-width: none;
+  }
   .hero-tracks { grid-template-columns: 1fr; }
   .desktop-br { display: none; }
-  .hero { padding-top: 2.25rem; }
+  .home-columns { grid-template-columns: 1fr; gap: 0; }
+  .page-head h1 { font-size: 2.35rem; }
+  .index-list-full {
+    display: block;
+    padding-top: 0;
+  }
+  .index-list-full li {
+    border-width: 0 0 1px;
+    border-radius: 0;
+    background: transparent;
+  }
+  .index-list-full a { padding: 0.85rem 0; }
   .index-card.has-thumb {
     grid-template-columns: 96px minmax(0, 1fr);
     gap: 0.75rem;
   }
   .index-thumb { width: 96px; }
+  .entry {
+    padding: 2.5rem 0;
+  }
+  .entry-header h1 {
+    font-size: 2.15rem;
+    line-height: 1.1;
+  }
+  .entry-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .entry-aside {
+    position: static;
+    order: -1;
+  }
+  .entry-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -499,6 +617,7 @@ a:focus-visible {
 /* ---------- ASI research additions ---------- */
 
 .hero-metrics {
+  grid-area: metrics;
   display: flex;
   flex-wrap: wrap;
   gap: 0.65rem;
@@ -521,7 +640,10 @@ a:focus-visible {
 .featured-paper { padding-top: 2rem; }
 
 .feature-panel {
-  display: block;
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 1rem 1.35rem;
+  align-items: center;
   text-decoration: none;
   border: 1px solid rgba(91, 121, 255, 0.42);
   border-radius: 6px;
@@ -534,23 +656,24 @@ a:focus-visible {
 .feature-panel strong {
   display: block;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 2rem;
   line-height: 1.25;
-  margin-top: 0.7rem;
+  margin-top: 0;
 }
 
 .feature-panel p {
+  grid-column: 2;
   color: var(--ink-soft);
-  margin: 0.55rem 0 0;
-  font-size: 0.96rem;
+  margin: 0;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
 .library-radar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.8rem;
-  padding: 1rem 0 0.25rem;
+  gap: 1rem;
+  padding: 1.25rem 0 1rem;
 }
 
 .library-radar > div {
@@ -582,4 +705,30 @@ a:focus-visible {
 
 @media (max-width: 600px) {
   .library-radar { grid-template-columns: 1fr; }
+  .feature-panel {
+    display: block;
+  }
+  .feature-panel strong {
+    font-size: 1.35rem;
+    margin-top: 0.7rem;
+  }
+  .feature-panel p {
+    margin-top: 0.55rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 980px) {
+  .hero {
+    display: block;
+  }
+  .hero-title {
+    font-size: 3.2rem;
+    max-width: 14ch;
+  }
+  .home-columns,
+  .index-list-full,
+  .entry-layout {
+    grid-template-columns: 1fr;
+  }
+  .entry-aside { position: static; }
 }

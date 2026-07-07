@@ -24,22 +24,26 @@ layout: default
   </figure>
   {% endif %}
 
-  {% if page.abstract %}
-  <section class="abstract">
-    <span class="abstract-label mono">Abstract</span>
-    <p>{{ page.abstract }}</p>
-  </section>
-  {% endif %}
+  <div class="entry-layout">
+    <div class="entry-body">
+      {{ content }}
+    </div>
 
-  {% if page.pdf or page.external_url or page.code_url %}
-  <div class="entry-links mono">
-    {% if page.pdf %}<a href="{{ page.pdf | relative_url }}">PDF ↓</a>{% endif %}
-    {% if page.external_url %}<a href="{{ page.external_url }}">Paper ↗</a>{% endif %}
-    {% if page.code_url %}<a href="{{ page.code_url }}">Code ↗</a>{% endif %}
-  </div>
-  {% endif %}
+    <aside class="entry-aside" aria-label="Entry summary">
+      {% if page.abstract %}
+      <section class="abstract">
+        <span class="abstract-label mono">Abstract</span>
+        <p>{{ page.abstract }}</p>
+      </section>
+      {% endif %}
 
-  <div class="entry-body">
-    {{ content }}
+      {% if page.pdf or page.external_url or page.code_url %}
+      <div class="entry-links mono">
+        {% if page.pdf %}<a href="{{ page.pdf | relative_url }}">PDF ↓</a>{% endif %}
+        {% if page.external_url %}<a href="{{ page.external_url }}">Paper ↗</a>{% endif %}
+        {% if page.code_url %}<a href="{{ page.code_url }}">Code ↗</a>{% endif %}
+      </div>
+      {% endif %}
+    </aside>
   </div>
 </article>
