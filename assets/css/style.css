@@ -437,3 +437,90 @@ a:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+/* ---------- ASI research additions ---------- */
+
+.hero-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: -0.5rem 0 1.6rem;
+}
+
+.hero-metrics span {
+  border: 1px solid var(--hairline);
+  border-radius: 4px;
+  background: rgba(16, 28, 56, 0.62);
+  color: var(--ink-soft);
+  padding: 0.45rem 0.6rem;
+}
+
+.hero-metrics strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.featured-paper { padding-top: 2rem; }
+
+.feature-panel {
+  display: block;
+  text-decoration: none;
+  border: 1px solid rgba(91, 121, 255, 0.42);
+  border-radius: 6px;
+  padding: 1.1rem 1.2rem;
+  background:
+    linear-gradient(135deg, rgba(91, 121, 255, 0.18), rgba(25, 201, 154, 0.08)),
+    rgba(16, 28, 56, 0.72);
+}
+
+.feature-panel strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-top: 0.7rem;
+}
+
+.feature-panel p {
+  color: var(--ink-soft);
+  margin: 0.55rem 0 0;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.library-radar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  padding: 1rem 0 0.25rem;
+}
+
+.library-radar > div {
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  background: rgba(16, 28, 56, 0.58);
+  padding: 0.9rem;
+}
+
+.radar-label {
+  display: block;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.library-radar strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+
+.library-radar p {
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  margin: 0.3rem 0 0;
+}
+
+@media (max-width: 600px) {
+  .library-radar { grid-template-columns: 1fr; }
+}

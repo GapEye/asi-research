@@ -1,40 +1,56 @@
 ---
-title: "Reading List: Foundations of Scalable Intelligence"
+title: "ASI Technical Reading List: Compounding Intelligence"
 catalog_id: ASI-LIB-001
 date: 2026-07-06
 track: technical
 status: living document
 abstract: >-
-  A curated, annotated reading list of the results and methods most relevant
-  to building generally capable systems: scaling laws, reasoning, agency,
-  and evaluation. Updated as the field moves.
+  A curated map of the papers that matter most for building ASI: post-AGI
+  pathways, recursive self-improvement, automated AI research, architecture
+  discovery, and code-evaluable scientific search.
+external_url: https://arxiv.org/abs/2606.12683
 ---
 
-This is a placeholder entry demonstrating the **technical** track of the library. Replace it with your first real collection.
+This reading list organizes the current ASI literature around one claim:
+superintelligence is less likely to arrive as a single artifact than as a
+stack of compounding loops. Models write code, code evaluates models, agents
+design stronger agents, and scientific workflows become cheaper, faster, and
+more parallel.
 
-A library entry supports:
+## North star
 
-- An abstract (shown at the top and in the index)
-- A `status` field — e.g. `living document`, `draft`, `v1.0`, `preprint`
-- A `pdf:` field in the front matter linking to a file you place in `/assets/` (e.g. `pdf: /assets/papers/my-paper.pdf`)
-- An `external_url:` field linking out to arXiv or elsewhere
-- Full Markdown body content, including sections, footnotes, and code
+[From AGI to ASI](https://arxiv.org/abs/2606.12683) is the best current
+orientation document. It frames the transition from AGI to artificial general
+superintelligence around four pathways: scaling AGI, AI paradigm shifts,
+recursive improvement, and large-scale multi-agent collectives.
 
-<!--
-HOW TO ADD A LIBRARY ENTRY
-==========================
-Create a file in _papers/ named anything.md with front matter:
+## Core technical clusters
 
----
-title: "Entry Title"
-catalog_id: ASI-LIB-XXX
-date: YYYY-MM-DD
-track: technical        # or: governance
-status: draft           # optional
-authors: [Your Name]    # optional
-abstract: >-            # optional
-  One-paragraph abstract.
-pdf: /assets/papers/file.pdf   # optional
-external_url: https://...      # optional
----
--->
+- **Recursive self-improvement:** Darwin Godel Machine, Hyperagents, Huxley-Godel Machine, and MetaAI recursive self-design.
+- **Automated AI R&D:** AI Scientist, Live-SWE-agent, CodeEvolve, AlphaEvolve, and agentic architecture discovery.
+- **Evaluation-grounded discovery:** systems that accept only changes validated by tests, benchmarks, proof checks, simulations, or domain evaluators.
+- **Collective intelligence:** ensembles of specialized agents that produce stronger search, review, repair, and synthesis than a single prompt loop.
+
+## Build pattern
+
+The practical pattern across these papers is simple:
+
+```python
+archive = seed_systems()
+while budget.remaining():
+    parent = select_promising_or_diverse(archive)
+    proposal = model.modify(parent.code, parent.logs, objective)
+    score = evaluate_in_sandbox(proposal)
+    if score.valid and score.beats_acceptance_bar:
+        archive.add(proposal, score)
+```
+
+The hard research problems are not the loop syntax. They are evaluator design,
+sample efficiency, transfer across domains, keeping the search open-ended, and
+making the resulting systems inspectable enough for deployment.
+
+## Current priority
+
+Treat every paper in this library as a component in an ASI research stack:
+scaling tells us what raw capability can buy, automated R&D shows how progress
+can compound, and governance measurement keeps that acceleration legible.

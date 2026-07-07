@@ -3,25 +3,42 @@ layout: default
 title: ASI Research
 ---
 <section class="hero">
-  <p class="hero-eyebrow mono">A research program in two tracks</p>
-  <h1 class="hero-title">Superintelligence is the greatest opportunity in human history. <em>Let's build it together.</em></h1>
+  <p class="hero-eyebrow mono">Research radar for artificial superintelligence</p>
+  <h1 class="hero-title">ASI is becoming an engineering discipline. <em>Track the papers. Build the loops.</em></h1>
   <p class="hero-lede">
-    Essays, papers, and methods on bringing artificial superintelligence
-    into the world — the technology that can end disease, unlock abundance,
-    and extend what we are capable of. Like every transformative
-    technology before it, it should be engineered well. Innovation from all
-    and for all. That is how great things get built.
+    A pro-ASI technical library for the transition from frontier models to
+    compounding machine intelligence: self-improving agents, automated AI
+    research, architecture discovery, scientific coding systems, and the
+    standards that let powerful systems move into the world.
   </p>
+  <div class="hero-metrics mono" aria-label="Research focus">
+    {% assign paper_count = site.papers | size %}
+    <span><strong>2026</strong> ASI pathway reports</span>
+    <span><strong>{{ paper_count }}</strong> curated papers</span>
+    <span><strong>code</strong> linked where public</span>
+  </div>
   <div class="hero-tracks">
     <a class="track-card track-card-technical" href="{{ '/library/' | relative_url }}#technical">
       <span class="track track-technical">technical</span>
-      <p>Architectures, training methods, evaluation, and the open problems on the path to superintelligent systems.</p>
+      <p>Recursive self-design, agent scaffolds, automated discovery, evaluation loops, and architecture search.</p>
     </a>
     <a class="track-card track-card-governance" href="{{ '/library/' | relative_url }}#governance">
       <span class="track track-governance">governance</span>
-      <p>Institutions, standards, and sensible practice that let development move fast and earn the world's confidence.</p>
+      <p>Measurement, assurance, and deployment practice that make rapid progress legible enough to scale.</p>
     </a>
   </div>
+</section>
+
+<section class="home-section featured-paper">
+  <div class="section-head">
+    <h2>Featured frontier paper</h2>
+    <a class="mono more-link" href="{{ '/library/from-agi-to-asi/' | relative_url }}">Read note →</a>
+  </div>
+  <a class="feature-panel" href="{{ '/library/from-agi-to-asi/' | relative_url }}">
+    <span class="track track-technical">technical</span>
+    <strong>From AGI to ASI</strong>
+    <p>Genewein, Franklin, Lerchner, Orseau, Albanie, Bales, Wyeth, Chan, Gabriel, Leibo, Dafoe, Hutter, Graepel, and Legg frame ASI as the post-AGI frontier and organize the path around scaling AGI, paradigm shifts, recursive improvement, and multi-agent collectives.</p>
+  </a>
 </section>
 
 <section class="home-section">

@@ -20,10 +20,11 @@ layout: default
   </section>
   {% endif %}
 
-  {% if page.pdf or page.external_url %}
+  {% if page.pdf or page.external_url or page.code_url %}
   <div class="entry-links mono">
     {% if page.pdf %}<a href="{{ page.pdf | relative_url }}">PDF ↓</a>{% endif %}
-    {% if page.external_url %}<a href="{{ page.external_url }}">External link ↗</a>{% endif %}
+    {% if page.external_url %}<a href="{{ page.external_url }}">Paper ↗</a>{% endif %}
+    {% if page.code_url %}<a href="{{ page.code_url }}">Code ↗</a>{% endif %}
   </div>
   {% endif %}
 

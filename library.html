@@ -5,10 +5,28 @@ permalink: /library/
 ---
 <header class="page-head">
   <h1>Library</h1>
-  <p class="page-lede">Papers, methods, and reference material, catalogued in two tracks.</p>
+  <p class="page-lede">Current ASI papers, methods, and reference code, catalogued in two tracks. Last research pass: 06 Jul 2026.</p>
 </header>
 
 {% assign papers = site.papers | sort: "date" | reverse %}
+
+<section class="library-radar" aria-label="Research radar">
+  <div>
+    <span class="mono radar-label">frontier map</span>
+    <strong>AGI to ASI</strong>
+    <p>Pathways, bottlenecks, and the technical loops that can turn AI progress into compounding scientific progress.</p>
+  </div>
+  <div>
+    <span class="mono radar-label">live code</span>
+    <strong>Self-improvement</strong>
+    <p>DGM, Hyperagents, CodeEvolve, and AI Scientist entries link directly to public implementations where available.</p>
+  </div>
+  <div>
+    <span class="mono radar-label">practice</span>
+    <strong>Fast and legible</strong>
+    <p>The governance track focuses on measurement, assurance, and deployment norms that let ambitious systems earn trust.</p>
+  </div>
+</section>
 
 <section class="library-section" id="technical">
   <h2><span class="track track-technical">technical</span> Advancement</h2>
