@@ -14,6 +14,10 @@ abstract: >-
   search, crossover, meta-prompting, refinement, and evaluator feedback for
   algorithmic discovery.
 external_url: https://arxiv.org/abs/2510.14150
+hero_image: /assets/img/library/codeevolve.jpg
+hero_image_alt: "CodeEvolve algorithmic discovery workflow diagram"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2510.14150"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2510.14150
 code_url: https://github.com/inter-co/science-codeevolve
 ---
 

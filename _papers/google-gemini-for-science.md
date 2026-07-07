@@ -11,6 +11,10 @@ abstract: >-
   Google's Gemini for Science collects experimental tools for scientific
   literature work, code transformation, hypothesis generation, and discovery.
 external_url: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/
+hero_image: /assets/img/library/google-gemini-for-science.jpg
+hero_image_alt: "Gemini for Science launch image"
+hero_image_credit: "Google Gemini for Science image"
+hero_image_url: https://blog.google/innovation-and-ai/technology/research/gemini-for-science-io-2026/
 ---
 
 Gemini for Science is a product signal: frontier labs are packaging scientific

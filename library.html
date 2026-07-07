@@ -33,10 +33,15 @@ permalink: /library/
   <ul class="index-list index-list-full">
     {% for paper in papers %}{% if paper.track == "technical" %}
     <li>
-      <a href="{{ paper.url | relative_url }}">
-        <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
-        <span class="index-title">{{ paper.title }}</span>
-        {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
+      <a class="{% if paper.hero_image %}index-card has-thumb{% endif %}" href="{{ paper.url | relative_url }}">
+        {% if paper.hero_image %}
+        <span class="index-thumb"><img src="{{ paper.hero_image | relative_url }}" alt="" loading="lazy"></span>
+        {% endif %}
+        <span class="index-copy">
+          <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
+          <span class="index-title">{{ paper.title }}</span>
+          {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
+        </span>
       </a>
     </li>
     {% endif %}{% endfor %}
@@ -48,10 +53,15 @@ permalink: /library/
   <ul class="index-list index-list-full">
     {% for paper in papers %}{% if paper.track == "governance" %}
     <li>
-      <a href="{{ paper.url | relative_url }}">
-        <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
-        <span class="index-title">{{ paper.title }}</span>
-        {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
+      <a class="{% if paper.hero_image %}index-card has-thumb{% endif %}" href="{{ paper.url | relative_url }}">
+        {% if paper.hero_image %}
+        <span class="index-thumb"><img src="{{ paper.hero_image | relative_url }}" alt="" loading="lazy"></span>
+        {% endif %}
+        <span class="index-copy">
+          <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
+          <span class="index-title">{{ paper.title }}</span>
+          {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
+        </span>
       </a>
     </li>
     {% endif %}{% endfor %}

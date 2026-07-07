@@ -14,6 +14,10 @@ abstract: >-
   A self-evolving agent framework that treats skills as long-lived, testable
   assets with creation, memory, management, evaluation, and refinement.
 external_url: https://arxiv.org/abs/2605.27366
+hero_image: /assets/img/library/muse-autoskill.jpg
+hero_image_alt: "MUSE-Autoskill system overview diagram"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2605.27366"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2605.27366
 ---
 
 MUSE-Autoskill focuses on a practical form of self-improvement: reusable skills.

@@ -10,6 +10,10 @@ abstract: >-
   A 2026 survey of AI agent architectures, orchestration patterns, deployment
   settings, evaluation practices, and open reliability challenges.
 external_url: https://arxiv.org/abs/2601.01743
+hero_image: /assets/img/library/ai-agent-systems-survey.jpg
+hero_image_alt: "AI agent systems survey overview diagram"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2601.01743"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2601.01743
 ---
 
 This survey is useful as scaffolding for the whole library. It organizes agent

@@ -67,9 +67,14 @@ title: ASI Research
     {% assign papers = site.papers | sort: "date" | reverse %}
     {% for paper in papers limit: 5 %}
     <li>
-      <a href="{{ paper.url | relative_url }}">
-        <span class="mono index-meta">{{ paper.catalog_id }} · <span class="track track-{{ paper.track }}">{{ paper.track }}</span></span>
-        <span class="index-title">{{ paper.title }}</span>
+      <a class="{% if paper.hero_image %}index-card has-thumb{% endif %}" href="{{ paper.url | relative_url }}">
+        {% if paper.hero_image %}
+        <span class="index-thumb"><img src="{{ paper.hero_image | relative_url }}" alt="" loading="lazy"></span>
+        {% endif %}
+        <span class="index-copy">
+          <span class="mono index-meta">{{ paper.catalog_id }} · <span class="track track-{{ paper.track }}">{{ paper.track }}</span></span>
+          <span class="index-title">{{ paper.title }}</span>
+        </span>
       </a>
     </li>
     {% endfor %}

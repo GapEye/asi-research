@@ -14,6 +14,10 @@ abstract: >-
   A measurement proposal for AI R&D automation, tracking how much AI changes
   research labor, progress rates, oversight, and incident patterns.
 external_url: https://arxiv.org/abs/2603.03992
+hero_image: /assets/img/library/measuring-ai-rd-automation.jpg
+hero_image_alt: "AI R&D automation oversight demand diagram"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2603.03992"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2603.03992
 ---
 
 This is governance that technical teams should actually want: measure the

@@ -18,6 +18,10 @@ abstract: >-
   improvement potential of agent descendants rather than only current benchmark
   score.
 external_url: https://arxiv.org/abs/2510.21614
+hero_image: /assets/img/library/huxley-godel-machine.jpg
+hero_image_alt: "Huxley-Godel Machine agent illustration"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2510.21614"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2510.21614
 code_url: https://github.com/metauto-ai/HGM
 ---
 

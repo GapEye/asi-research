@@ -13,6 +13,10 @@ abstract: >-
   A Gemini-built multi-agent system for generating, debating, ranking, and
   evolving scientific hypotheses in life sciences and beyond.
 external_url: https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/
+hero_image: /assets/img/library/google-co-scientist.jpg
+hero_image_alt: "Google DeepMind co-scientist research graphic"
+hero_image_credit: "Google DeepMind co-scientist launch image"
+hero_image_url: https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/
 ---
 
 Co-Scientist is one of the clearest examples of "AI researcher" as a coalition

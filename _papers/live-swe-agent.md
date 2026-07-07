@@ -15,6 +15,10 @@ abstract: >-
   real software tasks, reporting strong SWE-bench Verified and SWE-Bench Pro
   results without test-time scaling.
 external_url: https://arxiv.org/abs/2511.13646
+hero_image: /assets/img/library/live-swe-agent.jpg
+hero_image_alt: "Live-SWE-agent benchmark comparison charts"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2511.13646"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2511.13646
 ---
 
 Live-SWE-agent is notable because it moves self-improvement into runtime. Rather

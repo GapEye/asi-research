@@ -10,6 +10,10 @@ abstract: >-
   OpenAI's GPT-5.6 preview introduces Sol as a next-generation frontier model,
   with Terra and Luna positioned as lower-cost members of the same family.
 external_url: https://openai.com/index/previewing-gpt-5-6-sol/
+hero_image: /assets/img/library/openai-gpt-56-sol.jpg
+hero_image_alt: "OpenAI GPT-5.6 Sol preview graphic comparing Sol, Terra, and Luna"
+hero_image_credit: "Preview graphic supplied by the site owner"
+hero_image_url: https://openai.com/index/previewing-gpt-5-6-sol/
 ---
 
 GPT-5.6 Sol belongs in the library because the release is explicitly framed

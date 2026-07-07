@@ -10,6 +10,10 @@ abstract: >-
   Meta's Llama 4 Scout and Maverick introduced open-weight natively multimodal
   mixture-of-experts models, distilled from the larger Behemoth teacher model.
 external_url: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
+hero_image: /assets/img/library/meta-llama-4.jpg
+hero_image_alt: "Meta Llama 4 model family announcement graphic"
+hero_image_credit: "Meta Llama 4 announcement image"
+hero_image_url: https://ai.meta.com/blog/llama-4-multimodal-intelligence/
 ---
 
 Llama 4 is older than the July 2026 frontier drops, but it belongs in the ASI

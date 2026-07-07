@@ -9,6 +9,10 @@ abstract: >-
   deployable: measurement, evaluations, incident learning, and standards that
   scale with capability rather than freezing progress.
 external_url: https://arxiv.org/abs/2603.03992
+hero_image: /assets/img/library/measuring-ai-rd-automation.jpg
+hero_image_alt: "AI R&D automation oversight demand diagram"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2603.03992"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2603.03992
 ---
 
 The premise of this track is pro-progress: ambitious technology scales fastest

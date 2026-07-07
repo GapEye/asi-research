@@ -10,6 +10,10 @@ abstract: >-
   Google DeepMind's defense-in-depth roadmap for securing advanced AI agents
   even when alignment is imperfect.
 external_url: https://deepmind.google/blog/securing-the-future-of-ai-agents/
+hero_image: /assets/img/library/google-ai-control-roadmap.jpg
+hero_image_alt: "Google DeepMind AI control roadmap graphic"
+hero_image_credit: "Google DeepMind AI Control Roadmap image"
+hero_image_url: https://deepmind.google/blog/securing-the-future-of-ai-agents/
 ---
 
 Google DeepMind's AI Control Roadmap is a governance entry because it treats

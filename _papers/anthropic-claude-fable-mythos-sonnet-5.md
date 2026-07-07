@@ -10,6 +10,10 @@ abstract: >-
   Anthropic's June 2026 model wave includes Claude Fable 5, Mythos 5 for
   approved defensive cyber workflows, and Claude Sonnet 5 for broad agentic use.
 external_url: https://platform.claude.com/docs/en/about-claude/models/overview
+hero_image: /assets/img/library/anthropic-claude-fable-mythos-sonnet-5.jpg
+hero_image_alt: "Anthropic Claude model release artwork"
+hero_image_credit: "Anthropic Fable 5 and Mythos 5 announcement image"
+hero_image_url: https://www.anthropic.com/news/claude-fable-5-mythos-5
 ---
 
 Anthropic's current model table is a useful snapshot of the agentic frontier.

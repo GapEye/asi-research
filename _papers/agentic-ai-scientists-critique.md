@@ -14,6 +14,10 @@ abstract: >-
   A critique of autonomous AI-scientist systems, arguing that current designs
   miss tacit lab knowledge, diversity, physical feedback, and problem selection.
 external_url: https://arxiv.org/abs/2605.08956
+hero_image: /assets/img/library/agentic-ai-scientists-critique.jpg
+hero_image_alt: "Correlation heatmap from agentic AI scientists critique"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2605.08956"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2605.08956
 ---
 
 This is an important counterweight to the most optimistic AI-science entries.

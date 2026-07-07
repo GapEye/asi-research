@@ -18,6 +18,10 @@ abstract: >-
   architectures and training scripts, with AIRA-Compose and AIRA-Design
   producing models and mechanisms that match or beat hand-designed baselines.
 external_url: https://arxiv.org/abs/2605.15871
+hero_image: /assets/img/library/aira-architecture-discovery.jpg
+hero_image_alt: "AIRA-Compose and AIRA-Design benchmark charts"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2605.15871"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2605.15871
 ---
 
 AIRA matters because it moves automated AI R&D down into model architecture.

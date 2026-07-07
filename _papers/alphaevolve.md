@@ -28,6 +28,10 @@ abstract: >-
   algorithmic discovery, including infrastructure optimization and new
   algorithms for mathematical and computational problems.
 external_url: https://arxiv.org/abs/2506.13131
+hero_image: /assets/img/library/alphaevolve.jpg
+hero_image_alt: "AlphaEvolve workflow diagram"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2506.13131"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2506.13131
 ---
 
 AlphaEvolve is a high-signal demonstration of evaluator-grounded discovery. It

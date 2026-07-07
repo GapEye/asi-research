@@ -20,6 +20,10 @@ abstract: >-
   execution, verifiable reporting, human-in-the-loop modes, and cross-run
   evolution.
 external_url: https://arxiv.org/abs/2605.20025
+hero_image: /assets/img/library/autoresearchclaw.jpg
+hero_image_alt: "AutoResearchClaw paper logo"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2605.20025"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2605.20025
 code_url: https://github.com/GAIR-NLP/AutoResearchClaw
 ---
 

@@ -12,6 +12,10 @@ abstract: >-
   An AlphaEvolve-inspired algorithm that decomposes LLM-guided evolutionary
   search into initialization, local improvement, and perturbation operators.
 external_url: https://arxiv.org/abs/2602.10233
+hero_image: /assets/img/library/improvevolve.jpg
+hero_image_alt: "ImprovEvolve method diagram"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2602.10233"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2602.10233
 ---
 
 ImprovEvolve is a useful refinement of the AlphaEvolve pattern. Instead of

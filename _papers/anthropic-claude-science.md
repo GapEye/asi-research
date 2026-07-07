@@ -10,6 +10,10 @@ abstract: >-
   Anthropic's Claude Science is an AI workbench for scientists that integrates
   research tools, produces auditable artifacts, and connects to compute.
 external_url: https://www.anthropic.com/news/claude-science-ai-workbench
+hero_image: /assets/img/library/anthropic-claude-science.jpg
+hero_image_alt: "Anthropic Claude Science workbench launch graphic"
+hero_image_credit: "Anthropic launch image"
+hero_image_url: https://www.anthropic.com/news/claude-science-ai-workbench
 ---
 
 Claude Science is another signal that AI science is becoming an application

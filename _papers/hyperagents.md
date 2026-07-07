@@ -18,6 +18,10 @@ abstract: >-
   program, allowing the improvement process itself to be improved across
   domains.
 external_url: https://arxiv.org/abs/2603.19461
+hero_image: /assets/img/library/hyperagents.jpg
+hero_image_alt: "Hyperagents system diagram comparing DGM and Hyperagents"
+hero_image_credit: "Figure via ar5iv rendering of arXiv:2603.19461"
+hero_image_url: https://ar5iv.labs.arxiv.org/html/2603.19461
 code_url: https://github.com/facebookresearch/Hyperagents
 ---
 
