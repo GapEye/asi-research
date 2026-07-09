@@ -3,7 +3,10 @@ title: "AlphaEvolve: A Coding Agent for Scientific and Algorithmic Discovery"
 catalog_id: ASI-LIB-019
 date: 2025-06-16
 track: technical
+area: automated-ai-rd
+kind: system
 status: white paper
+open_question: "How reliably do evaluator-grounded evolutionary agents produce novel improvements that generalize beyond the objectives and environments used during search?"
 authors:
   - Alexander Novikov
   - Ngan Vu

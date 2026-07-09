@@ -3,7 +3,10 @@ title: "The Llama 4 Herd"
 catalog_id: ASI-LIB-034
 date: 2025-04-05
 track: technical
+area: frontier-models
+kind: model-release
 status: open-weight model drop
+open_question: "How far can open-weight multimodal mixture-of-experts models support inspectable agent research before capability gaps with closed frontier models dominate?"
 authors:
   - Meta AI
 abstract: >-

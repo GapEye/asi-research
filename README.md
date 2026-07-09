@@ -1,97 +1,65 @@
-# asi-research.com
+# ASI Research
 
-Jekyll site for ASI Research: essays (`_posts/`), a catalogued library of
-papers and methods (`_papers/`), deployed on GitHub Pages at
-https://asi-research.com.
+Jekyll site for [asi-research.com](https://asi-research.com): an independent
+research map for understanding the roadmap to artificial superintelligence and
+finding credible next work.
 
-## Deploy (one-time setup)
+## Content model
 
-1. **Create a public GitHub repo** (e.g. `asi-research`) and push this folder:
+- `_papers/` contains catalogued research signals.
+- `_posts/` contains essays.
+- Every research signal has a controlled `area`, `kind`, and editorial `track`.
+- `_config.yml` defines the research-area and artifact vocabularies used by the
+  homepage, filters, research notes, and related-entry system.
 
-   ```bash
-   cd asi-research
-   git init && git add -A && git commit -m "Initial site"
-   git branch -M main
-   git remote add origin https://github.com/YOURUSERNAME/asi-research.git
-   git push -u origin main
-   ```
+Required paper front matter:
 
-2. **Enable Pages**: repo → Settings → Pages → Source: "Deploy from a branch"
-   → Branch: `main`, folder `/ (root)`. GitHub builds Jekyll automatically.
+```yaml
+title: "Entry title"
+catalog_id: ASI-LIB-041
+date: 2026-07-09
+track: technical
+area: agents-self-improvement
+kind: system
+status: code available
+authors:
+  - Example Author
+abstract: >-
+  A concise statement of the mechanism, evidence, and relevance.
+open_question: "What important research question does this entry leave open?"
+external_url: https://example.com/primary-source
+```
 
-3. **DNS at Spaceship** (domain → Advanced DNS):
-   - Four `A` records, host `@`, pointing to:
-     `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - One `CNAME` record, host `www`, value `YOURUSERNAME.github.io`
+Optional fields include `code_url`, `pdf`, `featured`, `hero_image`,
+`hero_image_alt`, `hero_image_credit`, and `hero_image_url`.
 
-4. **Custom domain**: repo → Settings → Pages → Custom domain →
-   `asi-research.com` → Save. (The `CNAME` file in this repo keeps the
-   setting across deploys.) Once DNS propagates, check **Enforce HTTPS**.
+## Research areas
 
-5. **Verify the domain** (important): GitHub account Settings → Pages →
-   "Add a domain" → `asi-research.com` → add the TXT record GitHub gives
-   you at Spaceship. This prevents anyone else from ever claiming the
-   domain on GitHub Pages.
+- `foundations-pathways`
+- `frontier-models`
+- `agents-self-improvement`
+- `automated-ai-rd`
+- `ai-for-science`
+- `evals-control-governance`
 
-## Writing content
+Artifact kinds are `paper`, `model-release`, `benchmark`, `system`,
+`framework`, and `living-guide`.
 
-- **New essay**: add `_posts/YYYY-MM-DD-slug.md` with front matter
-  (`title`, `subtitle`, `catalog_id`, `date`). See the existing post.
-- **New library entry**: add a file to `_papers/` with `track: technical`
-  or `track: governance`, plus optional `status`, `abstract`, `authors`,
-  `pdf`, `external_url`. See the two existing entries.
-- **Catalog IDs**: essays use `ASI-2026-NNN`, library entries `ASI-LIB-NNN`.
-  Increment manually.
-- Push to `main` and the site rebuilds in ~1 minute.
+## Local preview
 
-## Local preview (optional)
-
-Requires Ruby:
+The production site is built by GitHub Pages. Use the Ruby version pinned in
+`.ruby-version` with Bundler:
 
 ```bash
 bundle install
 bundle exec jekyll serve
-# open http://localhost:4000
 ```
 
-## Structure
+Open `http://localhost:4000`. The generated `_site/` directory and local Jekyll
+caches are ignored. The GitHub Pages version of Liquid uses Ruby's legacy taint
+API, so Ruby 3.2+ is not compatible with this dependency set.
 
-```
-_config.yml       Site config, papers collection
-_layouts/         default / post / paper templates
-_posts/           Essays
-_papers/          Library entries (technical + governance tracks)
-assets/css/       style.css — design tokens at the top of the file
-index.html        Homepage
-writing.html      Essay index
-library.html      Library index, grouped by track
-about.md          About page
-CNAME             Custom domain for GitHub Pages
-```
+## Deployment
 
-
-# Appearance update: seraph icon + neural background
-
-Copy these folders/files into your repo root, overwriting the two existing
-files (_layouts/default.html and assets/css/style.css), then commit and push:
-
-    _layouts/default.html        (updated: favicon links, canvas, header mark, script)
-    assets/css/style.css         (updated: appended background/mark styles at the end)
-    assets/js/neural-bg.js       (new: the animated neural field)
-    assets/img/seraph.svg        (new: favicon — adapts to light/dark browser themes)
-    assets/img/favicon-32.png    (new: PNG fallback favicon)
-    assets/img/seraph-180.png    (new: apple-touch-icon)
-
-If you have edited default.html or style.css yourself since the initial
-scaffold, merge instead of overwriting: the CSS changes are purely appended
-at the end of the file under the "appearance pass 2" comment, and the layout
-changes are the <canvas>, the icon <link> tags, the inline SVG in the
-wordmark, and the <script> tag before </body>.
-
-Notes:
-- The background respects prefers-reduced-motion (renders a static field,
-  still parallaxes on scroll, no animation loop).
-- It pauses when the tab is hidden and caps devicePixelRatio at 2 to stay
-  cheap on high-DPI screens.
-- Favicon may take a hard refresh (Ctrl/Cmd+Shift+R) to appear — browsers
-  cache favicons aggressively.
+The site deploys from the `main` branch through GitHub Pages. The tracked
+`CNAME` preserves the `asi-research.com` custom domain.

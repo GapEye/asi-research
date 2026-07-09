@@ -3,7 +3,10 @@ title: "Gemini Omni Flash"
 catalog_id: ASI-LIB-028
 date: 2026-06-30
 track: technical
+area: frontier-models
+kind: model-release
 status: multimodal model preview
+open_question: "Can conversational video generation support causally faithful simulations rather than only visually plausible outputs?"
 authors:
   - Google
 abstract: >-

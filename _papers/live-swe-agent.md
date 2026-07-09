@@ -3,7 +3,10 @@ title: "Live-SWE-agent: Can Software Engineering Agents Self-Evolve on the Fly?"
 catalog_id: ASI-LIB-017
 date: 2025-11-24
 track: technical
+area: agents-self-improvement
+kind: system
 status: agent benchmark
+open_question: "Can on-the-fly scaffold evolution improve performance on unseen software tasks without destabilizing the agent or overfitting task feedback?"
 authors:
   - Chunqiu Steven Xia
   - Zhe Wang

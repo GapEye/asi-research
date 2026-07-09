@@ -3,7 +3,10 @@ title: "Gemini for Science"
 catalog_id: ASI-LIB-030
 date: 2026-05-19
 track: technical
+area: ai-for-science
+kind: system
 status: science toolkit
+open_question: "Do integrated Gemini for Science workflows measurably shorten end-to-end research cycles without reducing reproducibility?"
 authors:
   - Google
   - Google DeepMind

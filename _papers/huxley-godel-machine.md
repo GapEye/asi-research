@@ -3,7 +3,10 @@ title: "Huxley-Godel Machine: Human-Level Coding Agent Development"
 catalog_id: ASI-LIB-018
 date: 2025-10-29
 track: technical
+area: agents-self-improvement
+kind: system
 status: code available
+open_question: "Does descendant-based metaproductivity predict durable self-improvement beyond the benchmarks and search depths used to select it?"
 authors:
   - Wenyi Wang
   - Piotr Piekos

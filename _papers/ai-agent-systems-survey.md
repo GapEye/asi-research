@@ -3,7 +3,10 @@ title: "AI Agent Systems: Architectures, Applications, and Evaluation"
 catalog_id: ASI-LIB-036
 date: 2026-01-05
 track: technical
+area: agents-self-improvement
+kind: paper
 status: survey
+open_question: "Which evaluation protocol best predicts an agent system's reliability across long-horizon, tool-dependent workflows under changing environments and retry budgets?"
 authors:
   - Bin Xu
 abstract: >-

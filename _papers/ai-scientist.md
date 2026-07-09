@@ -3,7 +3,10 @@ title: "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discover
 catalog_id: ASI-LIB-020
 date: 2024-09-01
 track: technical
+area: ai-for-science
+kind: system
 status: code available
+open_question: "Which stages of the automated research loop remain the dominant bottlenecks to producing reproducible discoveries that survive expert review and independent replication?"
 authors:
   - Chris Lu
   - Cong Lu

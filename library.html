@@ -1,69 +1,169 @@
 ---
 layout: default
-title: Library
+title: Research Map
+description: Search and filter the systems, papers, benchmarks, and frameworks shaping the roadmap from frontier AI to artificial superintelligence.
 permalink: /library/
 ---
-<header class="page-head">
-  <h1>Library</h1>
-  <p class="page-lede">Current ASI papers, model drops, lab notes, benchmarks, governance frameworks, and reference code, catalogued in two tracks. Last research pass: 07 Jul 2026.</p>
+{% assign papers = site.papers | sort: "date" | reverse %}
+{% assign paper_count = papers | size %}
+{% assign code_count = 0 %}
+{% for paper in papers %}{% if paper.code_url %}{% assign code_count = code_count | plus: 1 %}{% endif %}{% endfor %}
+
+<header class="map-hero">
+  <div class="wrap map-hero-grid">
+    <div>
+      <p class="eyebrow mono">Research map / {{ paper_count }} signals / {{ site.research_areas | size }} areas</p>
+      <h1>Find the next idea<br>worth understanding.</h1>
+    </div>
+    <div class="map-hero-copy">
+      <p>This map connects the roadmap to superintelligence with the work needed to move it forward. Use it to orient yourself, trace a mechanism, or find a tractable research direction.</p>
+      <div class="map-hero-note mono"><span class="live-dot"></span> Primary sources · {{ code_count }} open-code entries · Source dates shown explicitly</div>
+    </div>
+  </div>
 </header>
 
-{% assign papers = site.papers | sort: "date" | reverse %}
+<div class="wrap research-explorer" data-total="{{ paper_count }}">
+  <section class="roadmap-ribbon" aria-labelledby="roadmap-title">
+    <div class="roadmap-heading">
+      <span class="mono">Roadmap</span>
+      <h2 id="roadmap-title">Capability → agency → discovery → compounding improvement</h2>
+      <p>Evals, control, and governance form the assurance layer. <a href="{{ '/roadmap/' | relative_url }}">See the full roadmap →</a></p>
+    </div>
+    <div class="roadmap-links" aria-label="Research areas">
+      {% for area in site.research_areas %}
+      {% assign area_papers = site.papers | where: "area", area.id %}
+      <button type="button" data-area-jump="{{ area.id }}"><span class="mono">{{ area.index }}</span>{{ area.short_name }}<small>{{ area_papers | size }}</small></button>
+      {% endfor %}
+    </div>
+  </section>
 
-<section class="library-radar" aria-label="Research radar">
-  <div>
-    <span class="mono radar-label">frontier map</span>
-    <strong>AGI to ASI</strong>
-    <p>Pathways, model releases, bottlenecks, and technical loops that can turn AI progress into compounding scientific progress.</p>
-  </div>
-  <div>
-    <span class="mono radar-label">live code</span>
-    <strong>Self-improvement</strong>
-    <p>DGM, Hyperagents, CodeEvolve, AI Scientist, AutoResearchClaw, and related entries link directly to public implementations where available.</p>
-  </div>
-  <div>
-    <span class="mono radar-label">practice</span>
-    <strong>Fast and legible</strong>
-    <p>The governance track focuses on evals, controls, assurance, and deployment norms that let ambitious systems earn trust.</p>
-  </div>
-</section>
+  <section class="explorer-controls" aria-label="Research map controls">
+    <div class="quick-views">
+      <span class="control-label mono">Quick views</span>
+      <div class="quick-view-buttons">
+        <button type="button" data-preset="all" class="active" aria-pressed="true">All signals</button>
+        <button type="button" data-preset="orient" aria-pressed="false">Foundations</button>
+        <button type="button" data-preset="code" aria-pressed="false">Open code</button>
+        <button type="button" data-preset="benchmarks" aria-pressed="false">Benchmarks</button>
+      </div>
+    </div>
 
-<section class="library-section" id="technical">
-  <h2><span class="track track-technical">technical</span> Advancement</h2>
-  <ul class="index-list index-list-full">
-    {% for paper in papers %}{% if paper.track == "technical" %}
-    <li>
-      <a class="{% if paper.hero_image %}index-card has-thumb{% endif %}" href="{{ paper.url | relative_url }}">
-        {% if paper.hero_image %}
-        <span class="index-thumb"><img src="{{ paper.hero_image | relative_url }}" alt="" loading="lazy"></span>
-        {% endif %}
-        <span class="index-copy">
-          <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
-          <span class="index-title">{{ paper.title }}</span>
-          {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
+    <div class="search-row">
+      <label class="search-field" for="research-search">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <span class="visually-hidden">Search the research map</span>
+        <input id="research-search" type="search" placeholder="Search systems, authors, open questions…" autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+      <button class="clear-filters" type="button" data-clear disabled>Clear filters</button>
+    </div>
+
+    <div class="filter-grid">
+      <label>
+        <span class="control-label mono">Research area</span>
+        <select id="area-filter">
+          <option value="">All areas</option>
+          {% for area in site.research_areas %}<option value="{{ area.id }}">{{ area.name }}</option>{% endfor %}
+        </select>
+      </label>
+
+      <label>
+        <span class="control-label mono">Artifact</span>
+        <select id="kind-filter">
+          <option value="">All artifacts</option>
+          {% for kind in site.artifact_kinds %}<option value="{{ kind.id }}">{{ kind.name }}</option>{% endfor %}
+        </select>
+      </label>
+
+      <fieldset class="track-filter">
+        <legend class="control-label mono">Lens</legend>
+        <div class="segmented-control">
+          <button type="button" data-track="" aria-pressed="true">All</button>
+          <button type="button" data-track="technical" aria-pressed="false">Technical</button>
+          <button type="button" data-track="governance" aria-pressed="false">Governance</button>
+        </div>
+      </fieldset>
+
+      <label class="code-filter">
+        <span class="control-label mono">Availability</span>
+        <span class="checkbox-row"><input id="code-filter" type="checkbox"> Code available</span>
+      </label>
+
+      <label>
+        <span class="control-label mono">Sort</span>
+        <select id="sort-filter">
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="title">Title A–Z</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <div class="results-bar">
+    <p id="result-count" class="mono" aria-live="polite">Showing all {{ paper_count }} signals</p>
+    <p class="results-hint mono">Select a title for the ASI Research synthesis</p>
+  </div>
+
+  <section class="research-results" aria-label="Research signals">
+    {% for paper in papers %}
+    {% assign area = site.research_areas | where: "id", paper.area | first %}
+    {% assign kind = site.artifact_kinds | where: "id", paper.kind | first %}
+    {% capture searchable %}{{ paper.title }} {{ paper.abstract }} {{ paper.open_question }} {{ paper.authors | join: ' ' }} {{ paper.status }} {{ area.name }} {{ kind.name }}{% endcapture %}
+    <article class="research-row area-{{ paper.area }}"
+      data-research-card
+      data-area="{{ paper.area }}"
+      data-kind="{{ paper.kind }}"
+      data-track="{{ paper.track }}"
+      data-code="{% if paper.code_url %}1{% else %}0{% endif %}"
+      data-date="{{ paper.date | date: '%s' }}"
+      data-title="{{ paper.title | downcase | escape }}"
+      data-search="{{ searchable | strip_newlines | downcase | escape }}">
+      <div class="research-row-index">
+        <span class="row-area-dot" aria-hidden="true"></span>
+        <span class="mono">{{ area.index }} / {{ area.short_name }}</span>
+        <span class="row-kind">{{ kind.name }}</span>
+      </div>
+      <div class="research-row-main">
+        <div class="row-meta mono">
+          <time datetime="{{ paper.date | date_to_xmlschema }}">{{ paper.date | date: "%Y" }}</time>
+          <span>{{ paper.track }}</span>
+          {% if paper.code_url %}<span class="code-badge">Open code</span>{% endif %}
+        </div>
+        <h2><a href="{{ paper.url | relative_url }}">{{ paper.title }}</a></h2>
+        <p>{{ paper.abstract }}</p>
+        {% if paper.open_question %}<p class="row-question"><span class="mono">Open question</span> {{ paper.open_question }}</p>{% endif %}
+        {% if paper.authors %}
+        <span class="row-authors">
+          {{ paper.authors | first }}{% assign author_count = paper.authors | size %}{% if author_count > 1 %} et al.{% endif %}
         </span>
-      </a>
-    </li>
-    {% endif %}{% endfor %}
-  </ul>
-</section>
-
-<section class="library-section" id="governance">
-  <h2><span class="track track-governance">governance</span> &amp; Practice</h2>
-  <ul class="index-list index-list-full">
-    {% for paper in papers %}{% if paper.track == "governance" %}
-    <li>
-      <a class="{% if paper.hero_image %}index-card has-thumb{% endif %}" href="{{ paper.url | relative_url }}">
-        {% if paper.hero_image %}
-        <span class="index-thumb"><img src="{{ paper.hero_image | relative_url }}" alt="" loading="lazy"></span>
+        {% else %}
+        <span class="row-authors">ASI Research</span>
         {% endif %}
-        <span class="index-copy">
-          <span class="mono index-meta">{{ paper.catalog_id }} · {{ paper.date | date: "%d %b %Y" }}{% if paper.status %} · {{ paper.status }}{% endif %}</span>
-          <span class="index-title">{{ paper.title }}</span>
-          {% if paper.abstract %}<span class="index-sub">{{ paper.abstract | truncate: 160 }}</span>{% endif %}
-        </span>
-      </a>
-    </li>
-    {% endif %}{% endfor %}
-  </ul>
+      </div>
+      <div class="research-row-actions">
+        <a href="{{ paper.url | relative_url }}" aria-label="Read ASI Research note: {{ paper.title }}">Read note <span aria-hidden="true">→</span></a>
+        {% if paper.external_url %}<a href="{{ paper.external_url }}" aria-label="Open primary source for {{ paper.title }}">Source <span aria-hidden="true">↗</span></a>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </section>
+
+  <div class="empty-state" data-empty hidden>
+      <span class="mono">No signals found</span>
+    <h2>Try a wider search.</h2>
+    <p>Clear one or more filters, or search for a broader mechanism such as “agents,” “science,” or “evaluation.”</p>
+    <button class="button button-primary" type="button" data-empty-clear>Reset the map</button>
+  </div>
+</div>
+
+<section class="research-cta">
+  <div class="wrap research-cta-grid">
+    <div>
+      <p class="section-kicker mono">The only metric that matters</p>
+      <h2>Can you see what to work on next?</h2>
+    </div>
+    <p>The map is designed to turn curiosity into orientation, and orientation into credible research progress. If a gap is hard to find or a route is unclear, that is a product problem worth fixing.</p>
+    <a class="button button-quiet" href="mailto:hello@asi-research.com">Send a gap or question →</a>
+  </div>
 </section>

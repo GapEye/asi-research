@@ -1,14 +1,61 @@
 title: ASI Research
-tagline: Technical advancement and governance of artificial superintelligence
+tagline: Research map for compounding machine intelligence
 description: >-
-  Essays, papers, and methods on the development and governance of
-  artificial superintelligence.
+  An independent research map connecting frontier models, self-improving
+  agents, automated AI R&D, scientific discovery, evaluation, and control.
 url: "https://asi-research.com"
 baseurl: ""
 
 # Author / org
 author:
   name: ASI Research
+
+# Controlled vocabulary used across the research map.
+research_areas:
+  - id: foundations-pathways
+    name: Foundations & pathways
+    short_name: Foundations
+    index: "01"
+    question: How might capable general systems cross into superintelligence?
+  - id: frontier-models
+    name: Frontier models
+    short_name: Models
+    index: "02"
+    question: Which capability gains change the shape of long-horizon work?
+  - id: agents-self-improvement
+    name: Agents & self-improvement
+    short_name: Self-improvement
+    index: "03"
+    question: Can agents reliably improve the systems that produced them?
+  - id: automated-ai-rd
+    name: Automated AI R&D
+    short_name: AI R&D
+    index: "04"
+    question: When does research automation become a compounding loop?
+  - id: ai-for-science
+    name: AI for science
+    short_name: Science
+    index: "05"
+    question: Where are AI systems already closing real discovery loops?
+  - id: evals-control-governance
+    name: Evals, control & governance
+    short_name: Evals & control
+    index: "06"
+    question: How do we make accelerating capability legible and steerable?
+
+artifact_kinds:
+  - id: paper
+    name: Paper
+  - id: model-release
+    name: Model release
+  - id: benchmark
+    name: Benchmark
+  - id: system
+    name: System
+  - id: framework
+    name: Framework
+  - id: living-guide
+    name: Living guide
 
 # Build settings
 markdown: kramdown
@@ -21,6 +68,11 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+feed:
+  collections:
+    papers:
+      path: /feed/research.xml
+
 # Collections
 collections:
   papers:
@@ -28,6 +80,14 @@ collections:
     permalink: /library/:name/
 
 defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/img/og-asi-research.png
+        width: 1731
+        height: 909
+        alt: ASI Research — The road to compounding machine intelligence
   - scope:
       path: ""
       type: "posts"
@@ -38,6 +98,7 @@ defaults:
       type: "papers"
     values:
       layout: "paper"
+      author: ASI Research
 
 exclude:
   - README.md

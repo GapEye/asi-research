@@ -3,7 +3,10 @@ title: "ASI Technical Radar: Compounding Intelligence"
 catalog_id: ASI-LIB-001
 date: 2026-07-06
 track: technical
+area: foundations-pathways
+kind: living-guide
 status: living document
+open_question: "Which bottleneck—evaluation quality, search efficiency, transfer, or inspectability—most limits today's compounding AI research loops?"
 abstract: >-
   A curated map of the papers, model drops, benchmarks, and research systems
   that matter most for building ASI: post-AGI pathways, recursive

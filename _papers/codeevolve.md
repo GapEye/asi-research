@@ -3,7 +3,10 @@ title: "CodeEvolve: Open-Source Evolutionary Coding Agent for Algorithmic Discov
 catalog_id: ASI-LIB-013
 date: 2026-05-28
 track: technical
+area: automated-ai-rd
+kind: system
 status: open-source code
+open_question: "How does island-based evolutionary search compare with simpler optimization methods when evaluator calls and model inference are held to the same compute budget?"
 authors:
   - Henrique Assumpcao
   - Diego Ferreira

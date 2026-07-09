@@ -3,7 +3,10 @@ title: "ImprovEvolve: Basin-Hopping Meets LLM-Guided Evolutionary Search"
 catalog_id: ASI-LIB-038
 date: 2026-06-26
 track: technical
+area: automated-ai-rd
+kind: system
 status: evolutionary search
+open_question: "How well do evolved initialization, improvement, and perturbation operators transfer beyond the optimization problems on which they were discovered?"
 authors:
   - Alexey Kravatskiy
   - Valentin Khrulkov

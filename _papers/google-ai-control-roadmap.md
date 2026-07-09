@@ -3,7 +3,10 @@ title: "Google DeepMind AI Control Roadmap"
 catalog_id: ASI-LIB-031
 date: 2026-06-23
 track: governance
+area: evals-control-governance
+kind: framework
 status: agent security framework
+open_question: "How effective are layered controls against capable agents that actively evade monitoring across long-horizon tasks?"
 authors:
   - Google DeepMind
 abstract: >-

@@ -3,7 +3,10 @@ title: "Agentic AI Scientists Are Not Built for Autonomous Scientific Discovery"
 catalog_id: ASI-LIB-040
 date: 2026-05-09
 track: governance
+area: evals-control-governance
+kind: paper
 status: position paper
+open_question: "What combination of tacit-knowledge capture, hypothesis diversity, and physical feedback would let agentic scientists outperform expert human teams on genuinely novel discoveries?"
 authors:
   - Harshit Bisht
   - Vinay Kumar

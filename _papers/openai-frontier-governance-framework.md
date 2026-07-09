@@ -3,7 +3,10 @@ title: "OpenAI Frontier Governance Framework"
 catalog_id: ASI-LIB-026
 date: 2026-05-28
 track: governance
+area: evals-control-governance
+kind: framework
 status: governance framework
+open_question: "Which governance thresholds and reporting practices reliably reduce frontier-model risk without becoming outdated as capabilities and laws change?"
 authors:
   - OpenAI
 abstract: >-

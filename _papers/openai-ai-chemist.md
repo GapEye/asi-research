@@ -3,7 +3,10 @@ title: "A Near-Autonomous AI Chemist Improves a Challenging Reaction"
 catalog_id: ASI-LIB-023
 date: 2026-06-17
 track: technical
+area: ai-for-science
+kind: system
 status: lab workflow
+open_question: "How well do AI-proposed reaction improvements generalize to unseen substrates, laboratories, and experimental conditions with less human steering?"
 authors:
   - OpenAI
   - Molecule.one

@@ -3,7 +3,10 @@ title: "GeneBench-Pro"
 catalog_id: ASI-LIB-022
 date: 2026-06-30
 track: technical
+area: evals-control-governance
+kind: benchmark
 status: benchmark
+open_question: "Do gains on GeneBench-Pro predict reproducible progress on novel genomics investigations rather than benchmark-specific analysis skill?"
 authors:
   - OpenAI
 abstract: >-

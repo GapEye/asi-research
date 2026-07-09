@@ -3,7 +3,11 @@ title: "GPT-5.6 Sol Preview"
 catalog_id: ASI-LIB-021
 date: 2026-06-26
 track: technical
+area: frontier-models
+kind: model-release
+featured: true
 status: model preview
+open_question: "How much of Sol's reported long-horizon improvement comes from base-model capability versus extra reasoning compute and subagent orchestration?"
 authors:
   - OpenAI
 abstract: >-

@@ -3,7 +3,10 @@ title: "Claude Fable 5, Mythos 5, and Sonnet 5"
 catalog_id: ASI-LIB-032
 date: 2026-06-30
 track: technical
+area: frontier-models
+kind: model-release
 status: model drops
+open_question: "What evaluation and access controls can determine when long-running, cyber-capable agents are safe enough for broader deployment?"
 authors:
   - Anthropic
 abstract: >-

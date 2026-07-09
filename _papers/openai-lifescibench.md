@@ -3,7 +3,10 @@ title: "LifeSciBench"
 catalog_id: ASI-LIB-024
 date: 2026-06-17
 track: governance
+area: evals-control-governance
+kind: benchmark
 status: evaluation benchmark
+open_question: "How strongly does LifeSciBench performance predict reliable assistance on real life-science decisions with incomplete evidence and expert oversight?"
 authors:
   - OpenAI
 abstract: >-

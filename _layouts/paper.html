@@ -1,49 +1,121 @@
 ---
 layout: default
 ---
-<article class="entry">
-  <header class="entry-header">
-    <div class="meta-line mono">
-      {% if page.catalog_id %}<span class="catalog-id">{{ page.catalog_id }}</span>{% endif %}
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
-      <span class="track track-{{ page.track }}">{{ page.track }}</span>
-      {% if page.status %}<span class="status">{{ page.status }}</span>{% endif %}
+{% assign area = site.research_areas | where: "id", page.area | first %}
+{% assign kind = site.artifact_kinds | where: "id", page.kind | first %}
+
+<article class="research-note area-{{ page.area }}">
+  <header class="note-header">
+    <div class="wrap">
+      <a class="back-link mono" href="{{ '/library/' | relative_url }}">← Research map</a>
+      <div class="note-heading-grid">
+        <div class="note-heading-main">
+          <div class="note-eyebrow mono">
+            <span class="row-area-dot" aria-hidden="true"></span>
+            <span>{{ area.name }}</span>
+            <span>{{ kind.name }}</span>
+            <span>{{ page.track }} lens</span>
+          </div>
+          <h1>{{ page.title }}</h1>
+          {% if page.authors %}<p class="note-authors">{{ page.authors | join: ", " }}</p>{% endif %}
+        </div>
+
+        <div class="note-heading-side">
+          {% if page.abstract %}
+          <div class="key-signal">
+            <span class="mono">Key signal</span>
+            <p>{{ page.abstract }}</p>
+          </div>
+          {% endif %}
+          {% if page.open_question %}
+          <div class="open-question">
+            <span class="mono">Open research question</span>
+            <p>{{ page.open_question }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="note-header-base">
+        <div class="note-actions">
+          {% if page.external_url %}<a class="button button-primary" href="{{ page.external_url }}">Primary source <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if page.code_url %}<a class="button button-quiet" href="{{ page.code_url }}">Code repository <span aria-hidden="true">↗</span></a>{% endif %}
+          {% if page.pdf %}<a class="button button-quiet" href="{{ page.pdf | relative_url }}">PDF <span aria-hidden="true">↓</span></a>{% endif %}
+        </div>
+        <div class="note-date mono">
+          <span>Source date</span>
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
+        </div>
+      </div>
     </div>
-    <h1>{{ page.title }}</h1>
-    {% if page.authors %}<p class="authors">{{ page.authors | join: ", " }}</p>{% endif %}
   </header>
 
   {% if page.hero_image %}
-  <figure class="entry-hero">
-    <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_image_alt | default: page.title }}">
-    {% if page.hero_image_credit %}
-    <figcaption class="mono">
-      {% if page.hero_image_url %}<a href="{{ page.hero_image_url }}">{{ page.hero_image_credit }}</a>{% else %}{{ page.hero_image_credit }}{% endif %}
-    </figcaption>
-    {% endif %}
-  </figure>
+  <div class="wrap">
+    <figure class="note-figure">
+      <div class="note-figure-frame">
+        <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_image_alt | default: page.title }}">
+      </div>
+      {% if page.hero_image_credit %}
+      <figcaption class="mono">
+        Figure / {% if page.hero_image_url %}<a href="{{ page.hero_image_url }}">{{ page.hero_image_credit }}</a>{% else %}{{ page.hero_image_credit }}{% endif %}
+      </figcaption>
+      {% endif %}
+    </figure>
+  </div>
   {% endif %}
 
-  <div class="entry-layout">
-    <div class="entry-body">
+  <div class="wrap note-content-grid">
+    <aside class="note-record" aria-label="Research record">
+      <div class="record-block">
+        <span class="record-label mono">Record</span>
+        <dl>
+          <div><dt>Catalog</dt><dd>{{ page.catalog_id }}</dd></div>
+          <div><dt>Area</dt><dd>{{ area.short_name }}</dd></div>
+          <div><dt>Artifact</dt><dd>{{ kind.name }}</dd></div>
+          {% if page.status %}<div><dt>Signal</dt><dd>{{ page.status }}</dd></div>{% endif %}
+          <div><dt>Lens</dt><dd>{{ page.track }}</dd></div>
+        </dl>
+      </div>
+      <div class="record-block record-method">
+        <span class="record-label mono">How to read this</span>
+        <p>This page is an ASI Research synthesis. Follow the primary source for the authors’ full claims, methods, and limitations.</p>
+      </div>
+    </aside>
+
+    <div class="note-body entry-body">
+      <div class="body-label mono">ASI Research note</div>
       {{ content }}
     </div>
-
-    <aside class="entry-aside" aria-label="Entry summary">
-      {% if page.abstract %}
-      <section class="abstract">
-        <span class="abstract-label mono">Abstract</span>
-        <p>{{ page.abstract }}</p>
-      </section>
-      {% endif %}
-
-      {% if page.pdf or page.external_url or page.code_url %}
-      <div class="entry-links mono">
-        {% if page.pdf %}<a href="{{ page.pdf | relative_url }}">PDF ↓</a>{% endif %}
-        {% if page.external_url %}<a href="{{ page.external_url }}">Paper ↗</a>{% endif %}
-        {% if page.code_url %}<a href="{{ page.code_url }}">Code ↗</a>{% endif %}
-      </div>
-      {% endif %}
-    </aside>
   </div>
+
+  {% assign related_papers = site.papers | where: "area", page.area | sort: "date" | reverse %}
+  {% if related_papers.size > 1 %}
+  <section class="related-research">
+    <div class="wrap">
+      <div class="section-intro compact">
+        <div>
+          <p class="section-kicker mono">More in this workstream</p>
+          <h2>Recent {{ area.short_name | downcase }} signals.</h2>
+        </div>
+        <a class="section-link mono" href="{{ '/library/' | relative_url }}?area={{ page.area }}">Open this area ↗</a>
+      </div>
+      <div class="related-grid">
+        {% assign related_count = 0 %}
+        {% for related in related_papers %}
+          {% if related.url != page.url and related_count < 3 %}
+          {% assign related_kind = site.artifact_kinds | where: "id", related.kind | first %}
+          <a class="related-card" href="{{ related.url | relative_url }}">
+            <span class="mono">{{ related_kind.name }} · {{ related.date | date: "%Y" }}</span>
+            <strong>{{ related.title }}</strong>
+            <p>{{ related.abstract | truncate: 125 }}</p>
+            <span class="text-link">Read note →</span>
+          </a>
+          {% assign related_count = related_count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
 </article>

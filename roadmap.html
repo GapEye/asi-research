@@ -1,0 +1,163 @@
+---
+layout: default
+title: Roadmap to ASI
+description: A clear roadmap from capable frontier models to compounding machine intelligence, connecting four pathways, the AI R&D feedback loop, and six research workstreams.
+permalink: /roadmap/
+---
+{% assign paper_count = site.papers | size %}
+
+<header class="roadmap-hero">
+  <div class="wrap roadmap-hero-grid">
+    <div>
+      <p class="eyebrow mono"><span class="live-dot"></span> Canonical orientation / roadmap to ASI</p>
+      <h1>From capable models to <em>compounding intelligence.</em></h1>
+    </div>
+    <div class="roadmap-hero-copy">
+      <p>This is not a countdown or a prediction. It is a map of the mechanisms that could lead from frontier AI to artificial superintelligence—and the research needed to understand, build, evaluate, and steer them.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#pathways">Follow the roadmap ↓</a>
+        <a class="button button-quiet" href="{{ '/library/' | relative_url }}">Browse the evidence ↗</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="roadmap-key">
+  <div class="wrap roadmap-key-grid">
+    <span class="mono">How to read this map</span>
+    <div><strong>4 pathways</strong><p>Ways capability could advance beyond AGI.</p></div>
+    <div><strong>1 compounding loop</strong><p>How AI-assisted R&amp;D could accelerate that advance.</p></div>
+    <div><strong>6 workstreams</strong><p>How this site organizes the evidence and open work.</p></div>
+  </div>
+</section>
+
+<section class="section roadmap-frame">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <p class="section-kicker mono">One territory / three lenses</p>
+        <h2>The models are complementary, not competing.</h2>
+      </div>
+      <p>The pathways describe how progress may happen. The loop shows why progress may compound. The workstreams turn both into a research program you can navigate.</p>
+    </div>
+    <div class="lens-grid">
+      <article><span class="mono">Lens 01 / Direction</span><h3>Pathways</h3><p>Scaling, new paradigms, recursive improvement, and multi-agent collectives are distinct routes by which capable systems might become superintelligent.</p></article>
+      <article><span class="mono">Lens 02 / Dynamics</span><h3>Compounding loop</h3><p>Models become agents; agents automate parts of AI R&amp;D; validated research gains feed into better models and systems.</p></article>
+      <article><span class="mono">Lens 03 / Work</span><h3>Research areas</h3><p>Six areas organize the systems, benchmarks, frameworks, and unanswered questions needed to assess and advance the roadmap.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section pathway-section" id="pathways">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <p class="section-kicker mono">Lens 01 / four pathways</p>
+        <h2>How capability could move beyond AGI.</h2>
+      </div>
+      <p>These pathways come from the site’s anchor orientation report, <a href="{{ '/library/from-agi-to-asi/' | relative_url }}">From AGI to ASI</a>. More than one can advance at the same time.</p>
+    </div>
+    <div class="pathway-grid">
+      <article>
+        <span class="mono">01 / Scaling AGI</span>
+        <h3>Make the current paradigm broader, deeper, and more reliable.</h3>
+        <p>More compute, better data, stronger post-training, longer context, memory, tools, and inference-time reasoning continue extending capable general systems.</p>
+        <div><strong>Watch</strong><span>Long-horizon reliability, tool use, transfer, cost, and the point at which scaling returns change shape.</span></div>
+        <a class="text-link" href="{{ '/library/' | relative_url }}?area=frontier-models">See frontier-model evidence →</a>
+      </article>
+      <article>
+        <span class="mono">02 / Paradigm shifts</span>
+        <h3>Discover better ways to build and train intelligent systems.</h3>
+        <p>New architectures, learning algorithms, objectives, memory systems, and search procedures could unlock capability that straightforward scaling cannot.</p>
+        <div><strong>Watch</strong><span>Architecture discovery, learned optimizers, continual adaptation, and gains that survive outside a narrow benchmark.</span></div>
+        <a class="text-link" href="{{ '/library/' | relative_url }}?area=automated-ai-rd">See automated R&amp;D →</a>
+      </article>
+      <article>
+        <span class="mono">03 / Recursive improvement</span>
+        <h3>Use AI to improve the process that creates AI.</h3>
+        <p>Agents write and test code, design experiments, search system configurations, and preserve useful discoveries—closing parts of the improvement loop.</p>
+        <div><strong>Watch</strong><span>Whether gains are real, general, cumulative, and transferable into the next generation of systems.</span></div>
+        <a class="text-link" href="{{ '/library/' | relative_url }}?area=agents-self-improvement">See self-improving systems →</a>
+      </article>
+      <article>
+        <span class="mono">04 / Multi-agent collectives</span>
+        <h3>Coordinate many specialized systems as a cognitive organization.</h3>
+        <p>Populations of agents may divide work, critique one another, preserve parallel hypotheses, and coordinate at machine speed.</p>
+        <div><strong>Watch</strong><span>Coordination overhead, diversity, communication, correlated failure, and whether collectives outperform their strongest member.</span></div>
+        <a class="text-link" href="{{ '/library/' | relative_url }}?q=multi-agent">See multi-agent signals →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section roadmap-loop-section">
+  <div class="wrap roadmap-loop-grid">
+    <div class="roadmap-loop-copy">
+      <p class="section-kicker mono">Lens 02 / the compounding dynamic</p>
+      <h2>Why the research loop matters.</h2>
+      <p>ASI need not arrive through a single breakthrough. The strategic transition is a shortening feedback cycle: AI systems perform more of the work required to improve AI systems, and verified gains return to the frontier.</p>
+      <p>The loop only compounds if its outputs are reliable. Evaluation, control, security, and governance are therefore part of the mechanism—not an appendix to it.</p>
+    </div>
+    <ol class="roadmap-loop" aria-label="Compounding AI research loop">
+      <li><span class="mono">01</span><div><strong>Frontier models</strong><p>Reason, code, use tools, and operate over longer horizons.</p></div></li>
+      <li><span class="mono">02</span><div><strong>Research agents</strong><p>Plan work, run experiments, critique results, and preserve useful artifacts.</p></div></li>
+      <li><span class="mono">03</span><div><strong>Automated AI R&amp;D</strong><p>Search architectures, improve scaffolds, create data, and test new methods.</p></div></li>
+      <li><span class="mono">04</span><div><strong>Validated gains</strong><p>Improvements that survive evaluation feed into better models and systems.</p></div></li>
+      <li class="roadmap-assurance"><span class="mono">Continuous layer</span><div><strong>Evals · control · governance</strong><p>Measure the loop, catch failure, and keep increasingly capable systems steerable.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section roadmap-workstreams">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <p class="section-kicker mono">Lens 03 / six workstreams</p>
+        <h2>Turn the roadmap into research.</h2>
+      </div>
+      <p>The six areas are the site’s evidence architecture. Each contains primary sources, an ASI Research synthesis, and direct routes to public code where available.</p>
+    </div>
+    <div class="area-grid">
+      {% for area in site.research_areas %}
+      {% assign area_papers = site.papers | where: "area", area.id %}
+      <a class="area-card area-{{ area.id }}" href="{{ '/library/' | relative_url }}?area={{ area.id }}">
+        <span class="area-card-top mono"><span>{{ area.index }}</span><span>{{ area_papers | size }} signals</span></span>
+        <h3>{{ area.name }}</h3>
+        <p>{{ area.question }}</p>
+        <span class="area-link mono">Explore workstream ↗</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section state-section">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <p class="section-kicker mono">Working synthesis / not a forecast</p>
+        <h2>What is visible—and what is not yet established.</h2>
+      </div>
+      <p>This maturity view is an editorial synthesis of the current corpus. It should change as the evidence changes.</p>
+    </div>
+    <div class="state-grid">
+      <article><span class="state-marker state-visible mono">Visible now</span><h3>Pieces of the loop</h3><p>Frontier models use tools, agent systems complete bounded research and coding tasks, self-editing systems improve on benchmarks, and AI systems contribute to scientific workflows.</p></article>
+      <article><span class="state-marker state-emerging mono">Being tested</span><h3>Longer, more general loops</h3><p>Long-horizon autonomy, architecture discovery, open-ended agent improvement, automated experiment design, and reliable multi-agent coordination are active engineering questions.</p></article>
+      <article><span class="state-marker state-open mono">Not established</span><h3>Sustained compounding</h3><p>The corpus does not yet establish recursive gains that reliably transfer across model generations, dependable superhuman collectives, or assurance sufficient for ASI-scale deployment.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="roadmap-next">
+  <div class="wrap roadmap-next-grid">
+    <div>
+      <p class="section-kicker mono">Choose your depth</p>
+      <h2>Orientation is the first step. Evidence is the next.</h2>
+    </div>
+    <div class="roadmap-next-links">
+      <a href="{{ '/library/from-agi-to-asi/' | relative_url }}"><span class="mono">01 / Anchor</span><strong>Read the foundational orientation note</strong><span>→</span></a>
+      <a href="{{ '/library/technical-reading-list/' | relative_url }}"><span class="mono">02 / Enter the work</span><strong>Follow the technical field guide</strong><span>→</span></a>
+      <a href="{{ '/library/' | relative_url }}"><span class="mono">03 / Investigate</span><strong>Search all {{ paper_count }} research signals</strong><span>→</span></a>
+    </div>
+  </div>
+</section>

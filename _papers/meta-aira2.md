@@ -3,7 +3,10 @@ title: "AIRA2: Overcoming Bottlenecks in AI Research Agents"
 catalog_id: ASI-LIB-035
 date: 2026-04-16
 track: technical
+area: automated-ai-rd
+kind: system
 status: AI research agents
+open_question: "Which combinations of asynchronous execution, validation design, and adaptive operators let AI research agents scale search without overfitting?"
 authors:
   - Meta AI
 abstract: >-

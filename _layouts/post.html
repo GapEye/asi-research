@@ -1,17 +1,26 @@
 ---
 layout: default
 ---
-<article class="entry">
-  <header class="entry-header">
-    <div class="meta-line mono">
-      {% if page.catalog_id %}<span class="catalog-id">{{ page.catalog_id }}</span>{% endif %}
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
-      <span class="track track-essay">essay</span>
+<article class="briefing">
+  <header class="briefing-header">
+    <div class="wrap prose-wrap">
+      <a class="back-link mono" href="{{ '/writing/' | relative_url }}">← Briefings</a>
+      <p class="note-eyebrow mono"><span class="live-dot"></span> ASI Research essay · {{ page.catalog_id }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="briefing-subtitle">{{ page.subtitle }}</p>{% endif %}
+      <time class="briefing-date mono" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %B %Y" }}</time>
     </div>
-    <h1>{{ page.title }}</h1>
-    {% if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif %}
   </header>
-  <div class="entry-body">
-    {{ content }}
+  <div class="wrap prose-wrap">
+    <div class="entry-body briefing-body">
+      {{ content }}
+    </div>
   </div>
+  <footer class="briefing-footer">
+    <div class="wrap prose-wrap">
+      <p class="mono">Continue exploring</p>
+      <h2>Move from the thesis to the evidence.</h2>
+      <a class="button button-primary" href="{{ '/library/' | relative_url }}">Open the research map →</a>
+    </div>
+  </footer>
 </article>

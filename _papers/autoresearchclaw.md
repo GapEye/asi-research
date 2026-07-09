@@ -3,7 +3,10 @@ title: "AutoResearchClaw"
 catalog_id: ASI-LIB-039
 date: 2026-05-23
 track: technical
+area: automated-ai-rd
+kind: system
 status: autonomous research pipeline
+open_question: "Which human intervention points most improve research validity without erasing the speed and scale gains of an autonomous multi-agent pipeline?"
 authors:
   - Jiaqi Liu
   - Shi Qiu

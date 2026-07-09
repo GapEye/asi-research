@@ -3,7 +3,10 @@ title: "Gemini 3.5 Flash and Antigravity Agent"
 catalog_id: ASI-LIB-027
 date: 2026-05-19
 track: technical
+area: frontier-models
+kind: model-release
 status: model drop
+open_question: "Which parts of the model-runtime-sandbox-tool stack drive reliable gains on long-horizon coding and browsing tasks?"
 authors:
   - Google
   - Google DeepMind

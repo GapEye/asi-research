@@ -1,21 +1,74 @@
 ---
 layout: default
-title: Writing
+title: Briefings
+description: Essays and living field guides that connect individual ASI research signals into a usable model of the field.
 permalink: /writing/
 ---
-<header class="page-head">
-  <h1>Writing</h1>
-  <p class="page-lede">Essays and working notes, in reverse chronological order.</p>
+{% assign guides = site.papers | where: "kind", "living-guide" %}
+
+<header class="briefings-hero">
+  <div class="wrap briefings-hero-grid">
+    <div>
+      <p class="eyebrow mono">Briefings / synthesis / field guides</p>
+      <h1>The ideas behind the map.</h1>
+    </div>
+    <p>Essays explain the thesis. Living guides organize the evidence. Together they help a reader move from “what is ASI?” to “what should I understand or work on next?”</p>
+  </div>
 </header>
 
-<ul class="index-list index-list-full">
-  {% for post in site.posts %}
-  <li>
-    <a href="{{ post.url | relative_url }}">
-      <span class="mono index-meta">{{ post.catalog_id }} · {{ post.date | date: "%d %b %Y" }}</span>
-      <span class="index-title">{{ post.title }}</span>
-      {% if post.subtitle %}<span class="index-sub">{{ post.subtitle }}</span>{% endif %}
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+<section class="section briefing-feature-section">
+  <div class="wrap">
+    <div class="section-intro compact">
+      <div>
+        <p class="section-kicker mono">Essays</p>
+        <h2>Points of view, made explicit.</h2>
+      </div>
+    </div>
+    <div class="essay-list">
+      {% for post in site.posts %}
+      <article class="essay-row">
+        <div class="essay-row-meta mono">
+          <span>{{ post.catalog_id }}</span>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+        </div>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+        </div>
+        <a class="essay-row-link" href="{{ post.url | relative_url }}" aria-label="Read {{ post.title }}">Read essay →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section field-guides-section">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <p class="section-kicker mono">Living field guides</p>
+        <h2>Routes through a moving frontier.</h2>
+      </div>
+      <p>These guides are maintained as the corpus grows. They cluster related evidence and connect abstract mechanisms to the systems, benchmarks, and frameworks that make them concrete.</p>
+    </div>
+    <div class="guide-grid">
+      {% for guide in guides %}
+      {% assign area = site.research_areas | where: "id", guide.area | first %}
+      <article class="guide-card area-{{ guide.area }}">
+        <span class="mono">{{ area.name }} · Living guide</span>
+        <h3><a href="{{ guide.url | relative_url }}">{{ guide.title }}</a></h3>
+        <p>{{ guide.abstract }}</p>
+        <a class="text-link" href="{{ guide.url | relative_url }}">Follow the guide →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="briefings-cta">
+  <div class="wrap briefings-cta-grid">
+    <span class="mono">Prefer the evidence directly?</span>
+    <h2>Search the complete research map.</h2>
+    <a class="button button-primary" href="{{ '/library/' | relative_url }}">Explore {{ site.papers | size }} signals →</a>
+  </div>
+</section>

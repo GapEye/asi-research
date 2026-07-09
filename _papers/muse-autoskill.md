@@ -3,7 +3,10 @@ title: "MUSE-Autoskill"
 catalog_id: ASI-LIB-037
 date: 2026-05-26
 track: technical
+area: agents-self-improvement
+kind: system
 status: self-evolving agents
+open_question: "How can self-evolving skill libraries avoid stale, conflicting, or unsafe procedures while preserving cumulative performance gains?"
 authors:
   - Huawei Lin
   - Peng Li

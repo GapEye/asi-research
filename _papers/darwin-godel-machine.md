@@ -3,7 +3,10 @@ title: "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents"
 catalog_id: ASI-LIB-015
 date: 2026-03-12
 track: technical
+area: agents-self-improvement
+kind: system
 status: code available
+open_question: "Can self-modifying agent archives continue producing transferable capability gains after benchmark feedback becomes sparse, noisy, or vulnerable to overfitting?"
 authors:
   - Jenny Zhang
   - Shengran Hu

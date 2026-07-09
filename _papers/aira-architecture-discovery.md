@@ -3,7 +3,10 @@ title: "Agentic Discovery of Neural Architectures: AIRA-Compose and AIRA-Design"
 catalog_id: ASI-LIB-012
 date: 2026-05-15
 track: technical
+area: automated-ai-rd
+kind: system
 status: architecture discovery
+open_question: "Do agent-discovered architectures retain their advantages when scaled beyond one billion parameters under compute budgets comparable to frontier human-designed models?"
 authors:
   - Alberto Pepe
   - Chien-Yu Lin

@@ -3,7 +3,10 @@ title: "A Shared Playbook for Trustworthy Third-Party Evaluations"
 catalog_id: ASI-LIB-025
 date: 2026-05-29
 track: governance
+area: evals-control-governance
+kind: framework
 status: eval practice
+open_question: "Which harness configurations best predict deployed agent behavior while remaining reproducible across independent evaluators?"
 authors:
   - OpenAI
 abstract: >-

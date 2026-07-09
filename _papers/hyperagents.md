@@ -3,7 +3,10 @@ title: "Hyperagents"
 catalog_id: ASI-LIB-014
 date: 2026-03-19
 track: technical
+area: agents-self-improvement
+kind: system
 status: code available
+open_question: "Can self-referential task and meta-agent improvement transfer reliably across domains where feedback is sparse or delayed?"
 authors:
   - Jenny Zhang
   - Bingchen Zhao

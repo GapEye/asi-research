@@ -3,7 +3,10 @@ title: "Notes Toward Sensible ASI Governance"
 catalog_id: ASI-LIB-002
 date: 2026-07-06
 track: governance
+area: evals-control-governance
+kind: living-guide
 status: living document
+open_question: "Which capability-linked thresholds best increase deployment confidence without unnecessarily delaying beneficial systems?"
 abstract: >-
   Governance for ASI should make fast development more legible, reliable, and
   deployable: measurement, evaluations, incident learning, and standards that

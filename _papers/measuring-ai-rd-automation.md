@@ -3,7 +3,10 @@ title: "Measuring AI R&D Automation"
 catalog_id: ASI-LIB-016
 date: 2026-03-06
 track: governance
+area: evals-control-governance
+kind: framework
 status: measurement framework
+open_question: "Which telemetry indicators provide the earliest reliable warning that AI R&D automation is outpacing oversight capacity?"
 authors:
   - Alan Chan
   - Ranay Padarath

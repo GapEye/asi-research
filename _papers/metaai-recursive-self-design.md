@@ -3,7 +3,10 @@ title: "From 0-to-1 to 1-to-N: Reproducible Engineering Evidence for MetaAI Recu
 catalog_id: ASI-LIB-011
 date: 2026-06-08
 track: technical
+area: agents-self-improvement
+kind: paper
 status: reproducibility protocol
+open_question: "What reproducibility criteria distinguish sustained recursive self-design from one-shot agent optimization across tasks and codebases?"
 authors:
   - Dun Li
   - Jiatao Li

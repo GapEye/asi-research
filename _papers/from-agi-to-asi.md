@@ -3,7 +3,10 @@ title: "From AGI to ASI"
 catalog_id: ASI-LIB-010
 date: 2026-06-10
 track: technical
+area: foundations-pathways
+kind: paper
 status: frontier report
+open_question: "Which measurable indicators would reveal that recursive improvement or multi-agent coordination is compounding capabilities faster than continued model scaling?"
 authors:
   - Tim Genewein
   - Matija Franklin

@@ -3,7 +3,10 @@ title: "Co-Scientist: A Multi-Agent AI Partner to Accelerate Research"
 catalog_id: ASI-LIB-029
 date: 2026-05-01
 track: technical
+area: ai-for-science
+kind: system
 status: AI science system
+open_question: "Does increasing test-time compute across debate, ranking, and evolution reliably improve experimentally validated hypothesis quality?"
 authors:
   - Google DeepMind
   - Google Research

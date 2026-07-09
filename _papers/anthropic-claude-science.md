@@ -3,7 +3,10 @@ title: "Claude Science"
 catalog_id: ASI-LIB-033
 date: 2026-06-30
 track: technical
+area: ai-for-science
+kind: system
 status: science workbench
+open_question: "Do auditable artifacts from AI science workbenches enable independent researchers to reproduce results as reliably as artifacts produced by expert human teams?"
 authors:
   - Anthropic
 abstract: >-

@@ -1,9 +1,19 @@
 ---
 layout: default
 title: Not found
+description: This page is not in the ASI Research catalog.
 permalink: /404.html
 ---
-<header class="page-head">
-  <h1>404 — Not in the catalog</h1>
-  <p class="page-lede">That page doesn't exist. Try the <a href="/writing/">writing index</a> or the <a href="/library/">library</a>.</p>
-</header>
+<section class="not-found">
+  <div class="wrap not-found-grid">
+    <span class="not-found-code mono">404 / unmapped territory</span>
+    <div>
+      <h1>This signal isn’t in the map.</h1>
+      <p>The page may have moved, or the address may be incomplete. Return to the roadmap or search the full research corpus.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="{{ '/library/' | relative_url }}">Search the research map →</a>
+        <a class="button button-quiet" href="{{ '/' | relative_url }}">Return home</a>
+      </div>
+    </div>
+  </div>
+</section>
